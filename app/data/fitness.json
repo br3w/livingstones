@@ -1,0 +1,151 @@
+{
+    "modulo": {
+        "id": "fitness",
+        "title": "Physical Activity",
+        "image": "healthfitness.jpg",
+        "description": "A prática de atividades físicas é muito importante para a saúde do corpo e da mente. Vamos avaliar um pouco como andam seus exercícios para ver se você está praticando o suficiente ou se precisa praticar um pouquinho mais!",
+        "helper": [
+            {
+                "text": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            {
+                "text": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+        ],
+        "helperload": "",
+        "questions": [
+            {
+                "id": "exercise",
+                "title": "Você pratica atividades físicas?",
+                "description": "",
+                "image": "",
+                "type": "list",
+                "input": "radio",
+                "options": [
+                    {
+                        "title": "Sim",
+                        "value": true,
+                        "next": "frequency_week"
+                    },
+                    {
+                        "title": "Não",
+                        "value": false,
+                        "next": "close"
+                    }
+                ],
+                "helper": {
+                    "title": "",
+                    "description": [
+                        {
+                            "text": "Atividade física é qualquer movimento corporal produzido pela musculatura que resulte em um gasto de energia acima do nível de repouso. Praticar atividades físicas é muito importante para manter uma vida saudável!"
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "frequency_week",
+                "title": "Quantas vezes por semana você pratica atividades físicas?",
+                "description": "",
+                "image": "",
+                "type": "list",
+                "input": "radio",
+                "options": [
+                    {
+                        "title": "Apenas uma vez por semana",
+                        "value": "ONE",
+                        "next": "average_time_minutes"
+                    },
+                    {
+                        "title": "Pelo menos duas vezes por semana",
+                        "value": "TWO",
+                        "next": "average_time_minutes"
+                    },
+                    {
+                        "title": "Três ou mais vezes por semana",
+                        "value": "THREE_PLUS",
+                        "next": "average_time_minutes"
+                    }
+                ],
+                "helper": {
+                    "title": "",
+                    "description": [
+                        {
+                            "text": "Compreende-se como atividade física desde esportes a caminhadas ou passeios, desde envolvam um esforço físico. A frequência da atividade física semanal é importante para determinar se isso está de fato ajudando sua saúde da melhor forma possível."
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "average_time_minutes",
+                "title": "Em média, quantos minutos dura seu exercício?",
+                "description": "",
+                "image": "",
+                "type": "range",
+                "input": "selectlist",
+                "next": "intensity",
+                "options": [
+                    {
+                        "range": [
+                            "5",
+                            "10",
+                            "15",
+                            "20",
+                            "30",
+                            "35",
+                            "40",
+                            "50"
+                        ],
+                        "name": "average_time_minutes",
+                        "title": "Minutos",
+                        "labels": {
+                            "plural": "minutos",
+                            "singular": "minuto"
+                        }
+                    }
+                ],
+                "helper": {
+                    "title": "",
+                    "description": [
+                        {
+                            "text": "A média de tempo deve levar em conta todos diferentes tipos de atividades realizadas."
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "intensity",
+                "title": "Em uma escala de 1 a 15: como você qualifica, em média, o esforço da sua atividade física?",
+                "description": "",
+                "image": "",
+                "type": "range",
+                "input": "slider",
+                "next": "close",
+                "range": [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5",
+                    "6",
+                    "7",
+                    "8",
+                    "9",
+                    "10",
+                    "11",
+                    "12",
+                    "13",
+                    "14",
+                    "15"
+                ],
+                "helper": {
+                    "title": "",
+                    "description": [
+                        {
+                            "text": "Podemos entender que a atividade física fraca é aquela que, quando você termina, não está nem suando. A moderada é a que você está suando mas aguentaria mais um pouco. E a intensa você termina extenuado, não aguentando mais."
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -1,24 +1,10 @@
 {
-  "name": "yeoman-generator-angular-material",
-  "homepage": "https://github.com/iansawyerva/generator-angular-material",
-  "authors": [
-    "Ian Sawyer"
-  ],
-  "description": "Google's Angular Material Yeoman Generator",
-  "main": "",
-  "keywords": [
-    "Angular",
-    "Material",
-    "Yeoman",
-    "Google"
-  ],
-  "license": "MIT",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "name": "premed",
+  "description": "Premed Aplication",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "jquery.pep": "^0.6.8",
+    "ngMask": "angular-mask#^3.1.1"
+  }
 }

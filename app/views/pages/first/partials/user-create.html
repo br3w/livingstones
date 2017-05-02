@@ -1,0 +1,123 @@
+<div ng-controller="firstUserCreateCtrl as firstusercreate">
+    <md-card-content  ng-show="show">
+        <form class="mp-login-user" name="userCreate" id="userCreate" ng-submit="submitNewUser(userCreate.$valid)" novalidate>
+
+            <!-- Name -->
+            <md-input-container class="mp-form-row md-block">
+                <label>Nome completo</label>
+                <input
+                    name="name"
+                    ng-model="create.name"
+                    autocomplete="off"
+                    required
+                    />
+                <div ng-messages="userCreate.name.$error" ng-if="!showHints">
+                    <div ng-message="required">Nome deve ser preenchido.</div>
+                </div>
+            </md-input-container>
+
+            <!-- Email -->
+            <md-input-container class="mp-form-row md-block">
+                <label>Email</label>
+                <input
+                    type="email"
+                    name="email"
+                    ng-model="create.email"
+                    ng-pattern="/^.+@.+\..+$/"
+                    autocomplete="off"
+                    required
+                />
+                <div ng-messages="userCreate.email.$error" ng-hide="showHints">
+                    <div ng-message="required">Email deve ser preenchido</div>
+                    <div ng-message="pattern">Insira um email válido</div>
+                </div>
+            </md-input-container>
+
+            <!-- CPF -->
+            <md-input-container class="mp-form-row md-block">
+                <label>CPF</label>
+                <input
+                    name="cpf"
+                    ng-model="create.cpf"
+                    mask="999.999.999-99"
+                    autocomplete="off"
+                    required
+                />
+                <div ng-messages="userCreate.cpf.$error" ng-if="!showHints">
+                    <div ng-message="required">CPF deve ser preenchido.</div>
+                </div>
+            </md-input-container>
+
+            <!-- Password -->
+            <md-input-container class="mp-form-row md-block">
+                <label>Senha</label>
+                <input
+                    type="password"
+                    name="password"
+                    minlength="10"
+                    ng-model="create.password"
+                    ng-pattern="/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/"
+                    autocomplete="off"
+                    required
+                />
+                <div ng-messages="userCreate.password.$error" ng-if="!showHints">
+                    <div ng-message="minlength">Senha deve possuir ao menos 10 caracteres</div>
+                    <div ng-message="pattern">Senha deve possuir letras minusculas, maiusculas e números</div>
+                    <div ng-message="required">Senha deve ser preenchida</div>
+                </div>
+
+            </md-input-container>
+
+            <!-- Password confirmation -->
+            <md-input-container class="mp-form-row md-block">
+                <label>Confirme senha</label>
+                <input
+                    type="password"
+                    name="password_confirmation"
+                    minlength="10"
+                    ng-model="create.password_confirmation"
+                    password-verify="{{create.password}}"
+                    autocomplete="off"
+                    required
+                />
+            <div ng-messages="userCreate.password_confirmation.$error" ng-hide="showHints" ng-if="userCreate.password_confirmation.$dirty" >
+                <div ng-message="minlength">Confirme senha deve possuir ao menos 10 caracteres</div>
+                <div ng-message="required">Confirme senha deve ser preenchida</div>
+                <div ng-message="passwordVerify">Confirme senha deve ser igual a senha </div>
+            </div>
+        </md-input-container>
+
+        <!-- Agree -->
+        <md-input-container class="mp-form-row md-block">
+            <md-checkbox class="cb-gray" name="agree" ng-model="create.agree" required>
+                Concordo com os <span class="cb-blue show-modal-termos"> Ternos e Condições</span>
+            </md-checkbox>
+            <div ng-messages="profileCreate.agree.$error" ng-if="!showHints">
+                <div ng-message="required">Você precisa aceitar os ternos.</div>
+            </div>
+        </md-input-container>
+
+        <md-input-container class="mp-form-row md-block">
+            <md-button type="submit" class="md-raised md-primary mp-bt-send">Cadastrar</md-button>
+        </md-input-container>
+
+        <div  ng-show="status === 'loading'">
+            <div layout="row" layout-align="center center">
+                <md-progress-circular md-mode="indeterminate"  md-diameter="36"></md-progress-circular>
+            </div>
+        </div>
+
+        <div ng-show="status === 'error'">
+            <p class="mp-error text-center">{{message}}<p>
+        </div>
+        </form>
+    </md-card-content>
+
+    <md-card-content ng-if="!show">
+        <div class="mp-text-box">
+            <p class="text-left">Um e-mail de confirmação foi enviado para:</p>
+            <p class="text-left"><span class="mp-link-email">{{create.email}}</span></p>
+            <p class="text-left">Verifique a sua caixa de entrada para confirmar seu cadastro. Acesse o link para validar sua conta e começar a cuidar melhor da sua saúde!</p>
+        </div>
+    </md-card-content>
+</div>

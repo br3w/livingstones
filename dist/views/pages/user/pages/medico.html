@@ -1,0 +1,224 @@
+<div class="box-all-content cb-white">
+    <md-card
+        class="md-margin-welcome"
+        flex-gt-xs="100"
+        layout="column">
+
+        <!-- Tabs -->
+        <md-tabs md-selected="selectedIndex" class="mp-header-medico" md-dynamic-height>
+
+            <!-- Shared Medic -->
+            <md-tab md-on-select="onTabChanges(1)" class="mp-tab-medico" label="Compartilhados">
+
+                <md-content class="md-padding">
+
+                    <md-list ng-show="shares !== null">
+                        <!-- HEADER -->
+                        <div class=""  hide-xs flex>
+                            <md-list-item class="mp-header-list"  layout="row" layout-align="start center">
+                                <div class="md-list-item-text" hide-xs flex></div>
+                                <div class="md-list-item-text" flex-xs="100" flex="45">
+                                    <p class="title">Nome</p>
+                                </div>
+                                <div class="md-list-item-text" flex-xs="100" flex="25">
+                                    <p class="title">Especialidade</p>
+                                </div>
+                                <div class="md-list-item-text" flex-xs="100" flex="15">
+                                    <p class="title-last">CRM</p>
+                                </div>
+                            </md-list-item>
+                        </div>
+
+                        <!-- LIST -->
+                        <div ng-repeat="share in shares track by $index">
+                            <md-list-item class="mp-medic-list" layout="row" data-list="$index" layout-xs="column" layout-align="start center" jquery-events>
+                                <div class="md-list-item-text" flex>
+                                    <img src="svg/ic_person_black_circle_42px.svg"  alt="avatar" />
+                                </div>
+                                <div class="md-list-item-text" flex-xs="100" flex="45">
+                                    <p class="name"> {{share.name}}</p>
+                                </div>
+                                <div class="md-list-item-text" flex-xs="100" flex="25">
+                                    <p class="specialty"><span hide show-xs flex>Especialidade: </span> {{share.specialty}}</p>
+                                </div>
+                                <div class="md-list-item-text" flex-xs="100" flex="15">
+                                    <p class="crm"><span hide show-xs flex>CRM: </span> {{share.crm}}</p>
+                                </div>
+                            </md-list-item>
+
+                            <md-list-item class="mp-medic-content" layout="row"  data-content="$index" layout-align="start center">
+                                <div class="md-list-item-text" hide-xs flex>
+                                </div>
+                                <div class="md-list-item-text" flex-xs="100" flex="85">
+                                    <p class="text">Você está prestes a remover o compartilhamento com o médico. Ele não poderá mais acompanhar seus resultados até que você compartilhe com ele novamente.</p>
+                                    <p class="buttons">
+                                        <md-button
+                                            class="md-raised md-warn md-hue-2 bt-revogar"
+                                            type="button"
+                                            ng-click="unShareMedico($index)">
+                                            Remover compartilhamento
+                                        </md-button>
+                                        <md-progress-circular   ng-if="unShareMedico.active == true"  ng-disabled="!unShareMedico.active" class="md-hue-2 load-button" md-diameter="20px"></md-progress-circular>
+                                    </p>
+                                </div>
+                            </md-list-item>
+                        </div>
+                    </md-list>
+
+                    <div class=""  ng-show="shares === null" layout="row" layout-align="start center">
+                        <div>
+                            <p class="alert">Nenhum médico compartilhado!</p>
+                        </div>
+                    </div>
+
+                </md-content>
+            </md-tab>
+
+            <!-- Search Medic -->
+            <md-tab md-on-select="onTabChanges(2)" class="mp-tab-search" label="Busca">
+                <md-content class="md-padding">
+                    <div class="center">
+
+
+                        <md-list>
+                            <form id="inputsearch" ng-submit="searchMedico()" novalidate>
+                                <input type="text" name="name" placeholder="Buscar médicos" autocomplete="off" required/>
+                                <button type="submit" class="icon-form search"></button>
+                                <!-- <i class="icon-form search-yellow"></i> -->
+                            </form>
+                        </md-list>
+
+                        <!-- WHILE LOAD SEARCH-->
+                        <div style="height:300px" ng-show="result == 'load'" layout="row" layout-align="center center">
+                            <div class="">
+                                <md-progress-circular  md-diameter="40px"></md-progress-circular>
+                            </div>
+                        </div>
+
+                        <!-- SHERED TRUE -->
+                        <md-list ng-show="result == 'info'">
+                            <md-list-item class="mp-content-form" layout="row"  data-content="$index" layout-align="space-between center">
+                                <div class="md-avatar"></div>
+                                <div class="md-list-item-text" flex="45">
+                                    <p class="title">gsdfgsd fgsfdg sdf g</p>
+                                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                                </div>
+                            </md-list-item>
+                        </md-list>
+
+                        <!-- SEARCH FALSE -->
+                        <md-list  ng-show="result == false">
+                            <md-list-item class="mp-content-form" layout="row"  layout-align="start center">
+                                <div class="md-avatar"></div>
+                                <div class="md-list-item-text" flex="90">
+                                    <p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                                    <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="mp-content-form" layout="row"  layout-align="start center">
+                                <div class="md-avatar"></div>
+                                <div class="md-list-item-text mp-header-form">
+                                    <h4>Convite</h4>
+                                </div>
+                            </md-list-item>
+                            <md-list-item class="mp-content-form" layout="row"  layout-align="start center">
+                                <div class="md-avatar"></div>
+                                <div class="md-list-item-text mp-box-form">
+                                    <form id="formshare" name="formshare" class="premed-form convite" ng-submit="addNewMedico(formshare.$valid)" novalidate>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            ng-model="medic.email"
+                                            ng-pattern = 'verifyMail'
+                                            placeholder="Email"
+                                            autocomplete="off"
+                                            required
+                                        />
+                                        <input
+                                            type="text"
+                                            name="phone"
+                                            ng-model="medic.phone"
+                                            placeholder="Celular"
+                                            mask="(99)99999-9999"
+                                            autocomplete="off"
+                                            required
+                                        />
+
+                                        <!-- <button
+                                            id="sharemedico"
+                                            class="bt-form sign"
+                                            type="submit"
+                                            ng-disabled="madic.$invalid">
+                                            Enviar
+                                        </button> -->
+                                        <md-input-container class="form-create md-block">
+                                            <md-button
+                                                id="sharemedico"
+                                                type="submit"
+                                                ng-disabled="madic.$invalid"
+                                                class="md-raised md-primary ">
+                                                Login
+                                            </md-button>
+                                        </md-input-container>
+
+                                    </form>
+                                </div>
+                            </md-list-item>
+                        </md-list>
+
+                        <!-- SEARCH TRUE -->
+                        <md-list ng-show="result == true">
+                            <!-- HEADER -->
+                            <div class="">
+                                <md-list-item class="mp-header-list" layout="row"  layout-align="space-between center">
+                                    <div class="md-avatar"></div>
+                                    <div class="md-list-item-text" flex="35">
+                                        <p class="title">Nome</p>
+                                    </div>
+                                    <div class="md-list-item-text" flex="35">
+                                        <p class="title">Especialidade</p>
+                                    </div>
+                                    <div class="md-list-item-text" flex="15">
+                                        <p class="title-last">CRM</p>
+                                    </div>
+                                </md-list-item>
+                            </div>
+
+                            <!-- LIST -->
+                            <div ng-repeat="medic in medicos track by $index">
+                                <md-list-item class="mp-medic-list" layout="row" data-list="$index" layout-align="space-between center" jquery-events>
+                                    <img ng-src="svg/ic_person_black_circle_42px.svg" class="md-avatar" alt="avatar" />
+                                    <div class="md-list-item-text" flex="35">
+                                        <p class="name">{{medic.name}}</p>
+                                    </div>
+                                    <div class="md-list-item-text" flex="35">
+                                        <p class="specialty">{{medic.specialty}}</p>
+                                    </div>
+                                    <div class="md-list-item-text" flex="15">
+                                        <p class="crm">{{medic.crm}}</p>
+                                    </div>
+                                </md-list-item>
+                                <md-list-item class="mp-medic-content" layout="row"  data-content="$index" layout-align="space-between center">
+                                    <div class="md-avatar"></div>
+                                    <div class="md-list-item-text" flex="85">
+                                        <p class="text">Você está prestes a compartilhar seus resultados MedPass com seu médico. Ele poderá ver seus resultados para conseguir cuidar melhor da sua saúde e bem estar.</p>
+                                        <p class="buttons">
+                                            <md-button style="background-color:#46d501!important"
+                                                class="md-raised md-warn md-hue-2 bt-compartilhar"
+                                                type="button"
+                                                ng-click="shareMedic($index)">
+                                                 Compartilhar
+                                            </md-button>
+                                            <md-progress-circular   ng-if="vm.activated == true"  ng-disabled="!vm.activated" class="md-hue-2 load-button" md-diameter="20px"></md-progress-circular>
+                                        </p>
+                                    </div>
+                                </md-list-item>
+                            </div>
+                        </md-list>
+                    </div>
+                </md-content>
+            </md-tab>
+
+        </md-tabs>
+    </md-card>
+</div>

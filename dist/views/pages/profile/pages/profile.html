@@ -1,0 +1,104 @@
+<div ng-controller="firstUserCreateCtrl as firstusercreate">
+
+    <form class="mp-login-user" name="profileCreate" id="profileCreate" ng-submit="submitProfile(profileCreate.$valid)" novalidate>
+
+        <md-card-content>
+
+            <!-- Name -->
+            <md-input-container class="mp-form-row md-block">
+                <label>Nome completo</label>
+                <input name="name" ng-model="profile.name" required autocomplete="off"/>
+                <div ng-messages="profileCreate.name.$error" ng-if="!showHints">
+                    <div ng-message="required">Nome deve ser preenchido.</div>
+                </div>
+            </md-input-container>
+
+            <!-- Date -->
+            <md-input-container class="mp-form-row md-block">
+                <label>Data de Nascimento</label>
+                <input name="birthdate" ng-model="profile.birthdate" mask="99/99/9999" required autocomplete="off"/>
+                <div ng-messages="profileCreate.birthdate.$error" ng-if="!showHints">
+                    <div ng-message="required">Data de Nascimento deve ser preenchida.</div>
+                </div>
+            </md-input-container>
+
+            <!-- Gender -->
+            <md-input-container class="mp-form-row md-block mp-select">
+                <label>Sexo</label>
+                <md-select name="gender" ng-model="profile.gender" required>
+                  <md-option value="MASCULINO">Masculino</md-option>
+                  <md-option value="FEMININO">Feminino</md-option>
+                </md-select>
+                <div ng-messages="profileCreate.gender.$error" ng-hide="showHints">
+                    <div ng-message="required">Sexo deve ser preenchido</div>
+                </div>
+            </md-input-container>
+
+            <!-- Etnia -->
+            <md-input-container class="mp-form-row md-block mp-select">
+                <label>Etnia</label>
+                <md-select name="etnia" ng-model="profile.etnia" required>
+                  <md-option value="AFRODESCENDENTE">Afrodescendentes</md-option>
+                  <md-option value="CAUCASIANO">Caucasiano</md-option>
+                  <md-option value="ORIENTAL">Oriental</md-option>
+                  <md-option value="JUDEU">Judeu</md-option>
+                </md-select>
+                <div ng-messages="profileCreate.etnia.$error" ng-hide="showHints">
+                    <div ng-message="required">Etnia deve ser preenchido</div>
+                </div>
+            </md-input-container>
+
+            <!-- CPF -->
+            <md-input-container class="mp-form-row md-block">
+                <label>CPF</label>
+                <input name="cpf" ng-model="profile.cpf" mask="999.999.999-99" required autocomplete="off"/>
+                <div ng-messages="profileCreate.cpf.$error" ng-if="!showHints">
+                    <div ng-message="required">CPF deve ser preenchido.</div>
+                </div>
+            </md-input-container>
+
+            <!-- Occupation -->
+            <md-input-container class="mp-form-row md-block">
+                <label>Especialidade</label>
+                <input name="specialty" ng-model="profile.specialty" required autocomplete="off"/>
+                <div ng-messages="profileCreate.specialty.$error" ng-if="!showHints">
+                    <div ng-message="required">Especialidade deve ser preenchido.</div>
+                </div>
+            </md-input-container>
+
+            <!-- Agree -->
+            <md-input-container class="mp-form-row md-block">
+                <md-checkbox class="cb-gray" name="profile.agree" ng-model="profile.agree" required>
+                    Concordo com os <span class="cb-blue show-modal-termos"> Ternos e Condições</span>
+                </md-checkbox>
+                <div ng-messages="profileCreate.agree.$error" ng-if="!showHints">
+                    <div ng-message="required">Você precisa aceitar os ternos.</div>
+                </div>
+            </md-input-container>
+
+            <!-- Button -->
+            <md-input-container class="mp-form-row md-block">
+                <md-button type="submit" class="md-raised md-primary mp-bt-send">Cadastrar</md-button>
+            </md-input-container>
+
+            <div  ng-show="status === 'loading'">
+                <div layout="row" layout-align="center center">
+                    <md-progress-circular md-mode="indeterminate"  md-diameter="36"></md-progress-circular>
+                </div>
+            </div>
+
+            <div ng-show="status === 'error'">
+                <p class="mp-error text-center">{{message}}<p>
+            </div>
+
+        </md-card-content>
+
+    </form>
+
+    <md-card-content ng-if="!show">
+        <div class="mp-text-box">
+            <p class="text-left">Muito obrigado! Um e-mail foi enviado para <span class="mp-link-email">{{create.email}}</span>. Verifique a sua caixa de entrada para confirmar seu cadastro. Acesse o link para validar sua conta e começar a cuidar melhor da sua saúde!</p>
+        </div>
+    </md-card-content>
+
+</div>

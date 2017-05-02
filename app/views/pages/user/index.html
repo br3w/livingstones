@@ -1,0 +1,56 @@
+<section id="userdash" class="device" jquery-events>
+    <!-- Header -->
+    <header
+        class="header"
+        ng-include="'./htmls/views/user/partials/header.html'">
+    </header>
+
+    <!-- Loading-->
+    <content  ng-if="load == 'loading'" class="content">
+        <div
+            class="center"
+            ng-include="'./htmls/views/user/partials/load-content.html'"
+            ng-controller="userDashCtrl as userdash">
+        </div>
+    </content>
+
+    <!-- Content -->
+    <content  ng-if="load == 'loaded'" class="content">
+
+        <!-- Medic -->
+        <div
+            id="usermedico"
+            class="center"
+            ng-if="content == 'medico'"
+            ng-include="'./htmls/views/user/pages/medico.html'"
+            ng-controller="userMedicoCtrl as usermedico">
+        </div>
+
+        <!-- Questions -->
+        <div
+            id="userquestions"
+            class="center"
+            ng-if="content == 'questions'"
+            ng-include="'./htmls/views/user/pages/questions.html'"
+            ng-controller="userDashCtrl as userquestions">
+        </div>
+
+        <!-- Dash -->
+        <div
+            class="center"
+            ng-if="content == 'dash'"
+            ng-include="'./htmls/views/user/pages/dash.html'"
+            ng-controller="userDashCtrl as userdash">
+        </div>
+
+        <!-- Faq -->
+        <div
+            class="center"
+            ng-if="content == 'faq'"
+            ng-include="'./htmls/views/user/pages/faq.html'"
+            ng-controller="userFaqCtrl as userfaq">
+        </div>
+
+    </content>
+
+</section>

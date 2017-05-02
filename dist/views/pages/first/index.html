@@ -1,0 +1,54 @@
+<section id="first" class="device" jquery-events>
+    <!-- Header -->
+    <header
+        class="header"
+        ng-include="'./htmls/views/login/partials/header.html'">
+    </header>
+
+    <content class="content">
+
+        <md-card class="md-margin-welcome" flex-gt-xs="100" layout="column">
+
+            <md-card-header class="mp-header-welcome">
+                <md-card-header-text>
+                    <span class="md-title">{{title}}</span>
+                </md-card-header-text>
+            </md-card-header>
+
+            <!-- First Access-->
+            <md-card-content
+                class="mp-box-text"
+                ng-if="view == 'first-access'" class="content"
+                ng-include="'./htmls/views/first/partials/first-access.html'">
+            </md-card-content>
+
+            <!-- User Create-->
+            <md-card-content
+                class="mp-box-text"
+                ng-if="view == 'user-create'" class="content"
+                ng-include="'./htmls/views/first/partials/user-create.html'">
+            </md-card-content>
+
+            <!-- User Identification-->
+            <md-card-content
+                class="mp-box-text"
+                ng-if="view == 'identification'" class="content"
+                ng-include="'./htmls/views/first/partials/identification.html'">
+            </md-card-content>
+
+        </md-card>
+
+    </content>
+
+</section>
+
+<div class="helper-box-first" ng-if="bemtivi == true">
+    <img class="helper-img" src="images/bentivi.png" width="80" alt="Helper - Ajuda ao usuário" />
+    <div class="helper-text">
+        <p>
+            Olá, eu sou o <span>Bemtivi, serei seu assistente.</span>
+            Vou aparecer muito por aqui, para guiá-lo e
+            responder suas dúvida.
+        </p>
+    </div>
+</div>

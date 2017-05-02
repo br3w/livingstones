@@ -1,0 +1,42 @@
+<md-card-header class="mp-header-modulo">
+    <md-card-header-text>
+        <span class="md-title">Câncer de pulmão</span>
+    </md-card-header-text>
+</md-card-header>
+
+<md-card-content class="mp-graphic-box md-margin">
+    <svg class="mp-graphic-modulo" fill="{{lung.color}}"  viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+        <path d="M2 16h15v3H2zm18.5 0H22v3h-1.5zM18 16h1.5v3H18zm.85-8.27c.62-.61 1-1.45 1-2.38C19.85 3.5 18.35 2 16.5 2v1.5c1.02 0 1.85.83 1.85 1.85S17.52 7.2 16.5 7.2v1.5c2.24 0 4 1.83 4 4.07V15H22v-2.24c0-2.22-1.28-4.14-3.15-5.03zm-2.82 2.47H14.5c-1.02 0-1.85-.98-1.85-2s.83-1.75 1.85-1.75v-1.5c-1.85 0-3.35 1.5-3.35 3.35s1.5 3.35 3.35 3.35h1.53c1.05 0 1.97.74 1.97 2.05V15h1.5v-1.64c0-1.81-1.6-3.16-3.47-3.16z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+    </svg>
+    <h4 style="color: {{lung.color}}!important">{{lung.string}}</h4>
+</md-card-content>
+
+
+<md-card-content class="mp-box-text">
+    <div class="mp-text-box">
+        <p class="text-center">Medindo seu nível de tabagismo conseguimos avaliar se você pertence ou não a um grupo de risco de câncer de pulmão.</p>
+    </div>
+</md-card-content>
+
+<md-card-content class="middle-card">
+    <div class="graph lung-cancer">
+        <ul class="grid">
+            <li ng-class="lung.score == false ? 'active':''"></li>
+            <li ng-class="lung.score == true ? 'active':''"></li>
+        </ul>
+    </div>
+</md-card-content>
+
+<md-button
+    ng-if="lung.orientation.length > 0"
+    class="md-raised md-primary bt-risco-detalhes">
+    Sugestões
+</md-button>
+
+<md-card-content ng-if="lung.orientation.length > 0"  class="mp-detalhe-box md-margin">
+    <h4 style="color: {{lung.color}}!important">{{lung.string}}</h4>
+    <div class="mp-text-box">
+        <p class="text-left" ng-repeat="text in lung.orientation track by $index">{{text}}</p>
+    </div>
+</md-card-content>

@@ -1,0 +1,204 @@
+{
+    "modulo": {
+        "id": "background",
+        "title": "Personal History",
+        "image": "background.jpg",
+        "description": "A prática de atividades físicas é muito importante para a saúde do corpo e da mente. Vamos avaliar um pouco como andam seus exercícios para ver se você está praticando o suficiente ou se precisa praticar um pouquinho mais!",
+        "helper": [
+            {
+                "text": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            {
+                "text": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+        ],
+        "helperload": "",
+        "questions": [
+            {
+                "id": "diabetes",
+                "title": "Você tem diabetes?",
+                "description": "",
+                "image": "",
+                "type": "list",
+                "input": "radio",
+                "options": [
+                    {
+                        "title": "Sim",
+                        "value": true,
+                        "next": "diseases"
+                    },
+                    {
+                        "title": "Não",
+                        "value": false,
+                        "next": "diseases"
+                    }
+                ],
+                "helper": {
+                    "title": "",
+                    "description": [
+                        {
+                            "text": "Diabetes é uma doença metabólica séria e ocorre quando a quantidade de glicose (açúcar) no sangue é muito alta porque o corpo não consegue usar esse açúcar adequadamente."
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "diseases",
+                "title": "Você tem ou já teve alguma dessas doenças?",
+                "description": "",
+                "image": "",
+                "type": "list",
+                "input": "check",
+                "next": "know_blood",
+                "options": [
+                    {
+                        "title": "Câncer",
+                        "value": "CANCER"
+                    },
+                    {
+                        "title": "Hipertensão arterial",
+                        "value": "HYPERTENSION"
+                    },
+                    {
+                        "title": "Ataque cardíaco",
+                        "value": "HEART_ATTACK"
+                    },
+                    {
+                        "title": "Derrame",
+                        "value": "STROKE"
+                    },
+                    {
+                        "title": "Dislipidemia (alterações no colesterol)",
+                        "value": "DYSLIPIDEMIA"
+                    },
+                    {
+                        "title": "Enfisema",
+                        "value": "EMPHYSEMA"
+                    },
+                    {
+                        "title": "Nenhuma",
+                        "value": "NONE"
+                    }
+                ],
+                "helper": {
+                    "title": "",
+                    "description": [
+                        {
+                            "text": "É importante marcar doenças apenas se você foi realmente diagnosticado com elas, é possível selecionar diversas caso você tenha mais de uma."
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "know_blood",
+                "title": "Você sabe os valores do seu colesterol e pressão arterial?",
+                "description": "",
+                "image": "",
+                "type": "list",
+                "input": "radio",
+                "options": [
+                    {
+                        "title": "Sim",
+                        "value": true,
+                        "next": "cholesterol_total"
+                    },
+                    {
+                        "title": "Não",
+                        "value": false,
+                        "next": "artherial_pressure_medication"
+                    }
+                ],
+                "helper": {
+                    "title": "",
+                    "description": [
+                        {
+                            "text": "Esses valores são importantes para calcular seus riscos de saúde. Caso você não tenha, não se preocupe. Conseguimos calcular com valores médios mas te indicaremos a fazer um exame de sangue simples para ter os valores corretos."
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "cholesterol_total",
+                "title": "Qual o valor do seu colesterol total (mg/dL)?",
+                "description": "",
+                "image": "",
+                "type": "range",
+                "input": "slider",
+                "next": "cholesterol_hdl",
+                "range": ["160", "170", "180", "190", "200", "210", "220", "230", "240", "250", "260", "270", "280"],
+                "helper": {
+                    "title": "",
+                    "description": [
+                        {
+                            "text": "Quando seu sangue acumula muito colesterol, esse colesterol gruda nas paredes dos seus vasos sanguíneos. Com o tempo, esse entupimento diminui a quantidade de sangue que passa pelas veias podendo impedir que o sangue chegue ao coração."
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "cholesterol_hdl",
+                "title": "Qual o valor do seu colesterol HDL (mg/dL)?",
+                "description": "",
+                "image": "",
+                "type": "range",
+                "input": "slider",
+                "next": "artherial_pressure",
+                "range": ["30", "35", "40", "45", "50", "55", "60", "65", "70", "75", "80"],
+                "helper": {
+                    "title": "",
+                    "description": [
+                        {
+                            "text": "O colesterol HDL é conhecido como \"bom colesterol.\" Ele passa pela sua corrente sanguínea limpando o colesterol ruim das paredes das veias. Um alto colesterol HDL é bom e reduz seu risco de problemas cardíacos, enquanto um baixo valor é ruim e aumenta seus riscos."
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "artherial_pressure",
+                "title": "Qual o valor da sua pressão arterial sistólica (mmHg)?",
+                "description": "",
+                "image": "",
+                "type": "range",
+                "input": "slider",
+                "next": "artherial_pressure_medication",
+                "range": ["90", "100", "110", "120", "130", "140", "150", "160", "170", "180", "190", "200"],
+                "helper": {
+                    "title": "",
+                    "description": [
+                        {
+                            "text": "Alta pressão sanguínea, também conhecida como hipertensão, significa uma pressão alta nos vazos sanguíneos. Isso pode prejudicar seus vazos e gerar problemas para a sua saúde. Qualquer um pode ter pressão alta, mas é mais comum com o passar dos anos ao envelhecer."
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "artherial_pressure_medication",
+                "title": "Você toma algum remédio para pressão?",
+                "description": "",
+                "image": "",
+                "type": "list",
+                "input": "radio",
+                "options": [
+                    {
+                        "title": "Sim",
+                        "value": true,
+                        "next": "close"
+                    },
+                    {
+                        "title": "Não",
+                        "value": false,
+                        "next": "close"
+                    }
+                ],
+                "helper": {
+                    "title": "",
+                    "description": [
+                        {
+                            "text": "É importante indicar que está tomando remédios para pressão apenas se estiver sob prescrição médica."
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

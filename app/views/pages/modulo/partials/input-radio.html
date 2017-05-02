@@ -1,0 +1,39 @@
+<!-- Title and Description  -->
+<h2 class="title align-center" ng-if="quest.title !=''">{{quest.title}}</h2>
+<p class="text align-center" ng-if="quest.description !=''">{{quest.description}}</p>
+
+<!-- Form questions -->
+<form class="center-quest" id="radio" name="radio" ng-submit="submitRadio(radio.$valid)">
+
+    <!-- Component -->
+    <md-radio-group ng-model="data.input">
+        <div class="row" ng-repeat="option in quest.options track by $index">
+            <div layout='row' layout-padding layout-align="start center" >
+                <md-radio-button
+                    id="{{quest.id}}{{$index}}"
+                    name="{{quest.id}}"
+                    type="radio"
+                    value="{{option.value}}||{{option.next}}"
+                    ng-click="validationSend()"
+                    class="input-radio">
+                    {{option.title}}
+                </md-radio-button>
+            </div>
+        </div>
+    </md-radio-group>
+
+    <!-- Button Send -->
+    <md-button
+        class="md-raised md-primary bt-modulo"
+        type="submit"
+        name="button"
+        ng-class="!send ? 'disable':'sign'"
+        ng-disabled="!send">Próximo
+    </md-button>
+
+    <!-- Button Back -->
+    <button  ng-if="idmodulo > 0" ng-click="sendBackPage()" class="bt-back" type="button" name="button"><i class="icon-seta"></i>Voltar</button>
+
+</form>
+
+<hr class="bar-quest">

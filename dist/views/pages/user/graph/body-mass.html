@@ -1,0 +1,46 @@
+<md-card-header class="mp-header-modulo">
+    <md-card-header-text>
+        <span class="md-title">IMC</span>
+    </md-card-header-text>
+</md-card-header>
+
+<md-card-content class="mp-graphic-box">
+    <svg  class="mp-graphic-modulo" fill="{{imc.color}}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/>
+    </svg>
+    <h4 style="color: {{imc.color}}!important">{{imc.string}}</h4>
+</md-card-content>
+
+
+<md-card-content class="mp-box-text md-margin">
+    <div class="mp-text-box">
+        <p class="text-center">O Índice de Massa Corporal é um método fácil e rápido para avaliar o seu nível de gordura.  No IMC as pessoas são categorizadas em abaixo do peso, peso normal, acima do peso ou obesidade, de acordo com os valores fornecidos.</p>
+    </div>
+</md-card-content>
+
+<md-card-content class="middle-card">
+    <div class="graph body-mass">
+        <ul class="grid">
+            <li ng-class="imc.index == 0 ? 'active':''"></li>
+            <li ng-class="imc.index == 1 ? 'active':''"></li>
+            <li ng-class="imc.index == 2 ? 'active':''"></li>
+            <li ng-class="imc.index == 3 ? 'active':''"></li>
+            <li ng-class="imc.index == 4 ? 'active':''"></li>
+            <li ng-class="imc.index == 5 ? 'active':''"></li>
+        </ul>
+    </div>
+</md-card-content>
+
+<md-button
+    ng-if="imc.orientation.length > 0"
+    class="md-raised md-primary bt-risco-detalhes">
+    Sugestões
+</md-button>
+
+<md-card-content  class="mp-detalhe-box md-margin">
+    <h4 style="color: {{imc.color}}!important">{{imc.string}}</h4>
+    <div class="mp-text-box">
+        <p class="text-left" ng-repeat="text in imc.orientation track by $index">{{text}}</p>
+    </div>
+</md-card-content>

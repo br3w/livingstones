@@ -1,191 +1,191 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var browserSync = require('browser-sync').create();
-var uglify = require('gulp-uglify');
-var browserify = require('browserify');
-var concat = require('gulp-concat');
-var sass = require('gulp-sass');
-var rename = require('gulp-rename');
-var inject = require('gulp-inject');
-var imagemin = require('gulp-imagemin');
-var iife = require("gulp-iife");
-var cleanCSS = require('gulp-clean-css');
-var Server = require('karma').Server;
 
-gulp.task('default', ['serve']);
 
-gulp.task('init', ['sass', 'bower', 'js', 'uglify-js', 'image', 'image-min', 'html', 'index']);
+// Load plugins
+var gulp           =   require('gulp'),
+    copy           =   require('copy'),
+    http           =   require('http'),
+    opn            =   require('opn'),
+    es             =   require('event-stream'),
+    connect        =   require('gulp-connect'),
+    sass           =   require('gulp-ruby-sass'),
+    sourcemaps     =   require('gulp-sourcemaps'),
+    autoprefixer   =   require('gulp-autoprefixer'),
+    cssnano        =   require('gulp-cssnano'),
+    jshint         =   require('gulp-jshint'),
+    uglify         =   require('gulp-uglify'),
+    imagemin       =   require('gulp-imagemin'),
+    rename         =   require('gulp-rename'),
+    concat         =   require('gulp-concat'),
+    notify         =   require('gulp-notify'),
+    cache          =   require('gulp-cache'),
+    livereload     =   require('gulp-livereload'),
+    browserify     =   require('gulp-browserify'),
+    refresh        =   require('gulp-refresh'),
+    ecstatic       =   require('ecstatic'),
+    lr             =   require('tiny-lr'),
+    lrserver       =   lr(),
+    webserver      =   require('gulp-webserver'),
+    dependencies   =   require('gulp-html-dependencies'),
+    del            =   require('del'),
+    livereloadport =   35728,
+    serverport     =   8000;
 
-// Static Server + watching js/scss/html files
-gulp.task('serve', ['init'], function() {
 
-    browserSync.init({
-        server: {
-            baseDir: './dev'
-        }
-    });
 
-    /* If you use a proxy replace the previous code with the below script replacing 'yourlocal.dev' with your local proxy
-       
-        browserSync.init({
-            proxy: 'yourlocal.dev'
-        });
 
-   */
+// Open browser
+gulp.task('openbrowser', function() {
+  opn( 'http://localhost:8000/#!/');
+});
 
-    gulp.watch('./scss/*.scss', ['sass-watch']);
+gulp.task('serve', function() {
+    //Set up your static fileserver, which serves files in the build dir
+    http.createServer(ecstatic({ root: __dirname + '/dist' })).listen(serverport);
 
-    gulp.watch('./public/images/*', ['image-watch']);
-
-    gulp.watch('./public/**/*.html', ['html-watch']);
-
-    gulp.watch('./public/js/**/*.js', ['js-watch']);
-
-    gulp.watch('./bower_components/**/*.js', ['bower']);
+    //Set up your livereload server
+    lrserver.listen(livereloadport)
 });
 
 
-gulp.task('index', function() {
-    var target = gulp.src('./dev/index.html');
-    var sources = gulp.src(['./bower_components/**/*.js', './public/js/config/app.js', './public/js/factories/**/*.js', './public/js/services/**/*.js', './public/js/controllers/**/*.js', './public/js/filters/**/*.js', './public/js/directives/**/*.js', './bower_components/**/*.css', './public/css/**/*.css'], { read: false });
+// Copy
+gulp.task('copy', function() {
+    gulp.src('app/fonts/**/*')
+        .pipe(gulp.dest('dist/fonts/'))
 
-    return target.pipe(inject(sources))
-        .pipe(gulp.dest('./dev'))
+    gulp.src('app/svg/**/*')
+        .pipe(gulp.dest('dist/svg/'))
+
+    gulp.src('app/views/**/*')
+        .pipe(gulp.dest('dist/views/'))
+
+    gulp.src('app/data/**/*')
+        .pipe(gulp.dest('dist/data/'))
+
+    gulp.src('app/.htaccess')
+        .pipe(gulp.dest('dist/'))
+
 });
 
-gulp.task('html', function() {
-    return gulp.src('./public/**/*.html')
-        .pipe(gulp.dest('./dev'))
-        .pipe(gulp.dest('./dist'))
-        .pipe(browserSync.stream());
+// Dependencias
+gulp.task('dependencies', function() {
+    return gulp.src('app/index.html')
+        .pipe(dependencies({
+            dest: 'dist',
+            prefix: '/vendor',
+        }))
+        .pipe(gulp.dest('dist'));
 });
 
-gulp.task('image', function() {
-    return gulp.src('./public/images/*')
-        .pipe(gulp.dest('./dev/public/images'))
-        .pipe(gulp.dest('./dist/public/images'))
-        .pipe(browserSync.stream());
+// Styles
+gulp.task('styles', function() {
+  return sass('app/styles/main.scss', { style: 'expanded' })
+
+    .pipe(sourcemaps.init())
+    .pipe(autoprefixer())
+    .pipe(gulp.dest('dist/styles'))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(cssnano())
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest('dist/styles'))
 });
 
-// Compile sass into CSS & auto-inject into browsers
-gulp.task('sass', function() {
-    return gulp.src('./scss/**/*.scss')
-        .pipe(sass())
-        .pipe(gulp.dest('./public/css'))
-        .pipe(gulp.dest('./dev/public/css'))
-        .pipe(cleanCSS({ compatibility: 'ie8' }))
-        .pipe(gulp.dest('./dist/public/css'))
-        .pipe(browserSync.stream());
+// Vendor
+gulp.task('vendor', function() {
+  return gulp.src(
+      [
+        'node_modules/angular/angular.min.js',
+        'node_modules/angular-mocks/angular-mocks.js',
+        'node_modules/angular-animate/angular-animate.min.js',
+        'node_modules/angular-messages/angular-messages.min.js',
+        'node_modules/angular-route/angular-route.min.js',
+        'node_modules/angular-loader/angular-loader.min.js',
+        'node_modules/angular-material/angular-material.min.js',
+        'node_modules/angular-aria/angular-aria.min.js',
+        'node_modules/angular-sanitize/angular-sanitize.min.js',
+
+        'bower_components/ngMask/dist/ngMask.min.js',
+        'bower_components/jquery/dist/jquery.min.js',
+        'bower_components/jquery.pep/src/jquery.pep.js'
+      ])
+      .pipe(gulp.dest('./dist/vendor'));
 });
 
-gulp.task('js', function() {
-    return gulp.src('./public/js/**/*.js')
-        .pipe(gulp.dest('./dev/public/js'))
+// Scripts
+gulp.task('scripts', function() {
+    return es.concat(
+        gulp.src('app/scripts/app.js')
+            .pipe(rename({ suffix: '.min' }))
+            .pipe(uglify())
+            .pipe(gulp.dest('dist/scripts')),
+
+        gulp.src('app/scripts/configs/**/*.js')
+            .pipe(concat('config.js'))
+            .pipe(rename({ suffix: '.min' }))
+            .pipe(uglify())
+            .pipe(gulp.dest('dist/scripts')),
+
+        gulp.src('app/scripts/factorys/**/*.js')
+            .pipe(concat('factory.js'))
+            .pipe(rename({ suffix: '.min' }))
+            .pipe(uglify())
+            .pipe(gulp.dest('dist/scripts')),
+
+        gulp.src('app/scripts/controllers/**/*.js')
+            .pipe(concat('controller.js'))
+            .pipe(rename({ suffix: '.min' }))
+            .pipe(uglify())
+            .pipe(gulp.dest('dist/scripts')),
+
+        gulp.src('app/scripts/utils/**/*.js')
+            .pipe(concat('utils.js'))
+            .pipe(rename({ suffix: '.min' }))
+            .pipe(uglify())
+            .pipe(gulp.dest('dist/scripts')),
+
+        gulp.src('app/scripts/directives/**/*.js')
+            .pipe(concat('directive.js'))
+            .pipe(rename({ suffix: '.min' }))
+            .pipe(uglify())
+            .pipe(gulp.dest('dist/scripts'))
+        );
 });
 
-gulp.task('bower', ['index', 'index:dist'], function() {
-    return gulp.src(['./bower_components/**/*.min.js', './bower_components/**/*.min.css'])
-        .pipe(gulp.dest('./dev/bower_components'))
-        .pipe(gulp.dest('./dist/bower_components'));
+// Images
+gulp.task('images', function() {
+  return gulp.src('app/images/**/*')
+    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    .pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('image-watch', ['image', 'image-min'], function(done) {
-    browserSync.reload();
-    done();
+// Clean
+gulp.task('clean', function() {
+  return del('dist/');
 });
 
-gulp.task('html-watch', ['html'], function(done) {
-    browserSync.reload();
-    done();
+// Default task
+gulp.task('default', ['clean'], function() {
+  gulp.start('serve','styles', 'scripts', 'vendor', 'images', 'dependencies', 'copy', 'watch','openbrowser');
 });
 
-gulp.task('sass-watch', ['sass', 'index', 'index:dist'], function(done) {
-    browserSync.reload();
-    done();
-});
+// Watch
+gulp.task('watch', function() {
 
-gulp.task('js-watch', ['js', 'uglify-js', 'index', 'index:dist'], function(done) {
-    browserSync.reload();
-    done();
-});
+  // Watch .scss files
+  gulp.watch('app/styles/**/*.scss', ['styles', ]);
 
-//DIST:
+  // Watch .js files
+  gulp.watch('app/scripts/**/*.js', ['scripts']);
 
-gulp.task('image-min', function() {
-    gulp.src(['./public/**/*.png', './public/**/*.jpg', './public/**/*.gif', './public/**/*.jpeg'])
-        .pipe(imagemin())
-        .pipe(gulp.dest('./dist/public'));
-});
+  // Watch image files
+  gulp.watch('app/images/**/*', ['images']);
 
-gulp.task('uglify-js', function() {
-    return gulp.src(['./public/js/config/app.js', './public/js/factories/**/*.js', './public/js/services/**/*.js', './public/js/controllers/**/*.js', './public/js/filters/**/*.js', './public/js/directives/**/*.js'])
-        .pipe(concat('all.min.js'))
-        .pipe(gulp.dest('./public/js/min/'))
-        .pipe(uglify())
-        .pipe(gulp.dest('./public/js/min/'));
-});
+  // Watch html files
+  gulp.watch('app/**/*', ['copy', 'dependencies']);
 
-gulp.task('index:dist', function() {
-    var target = gulp.src('./dist/index.html');
-    var sources = gulp.src(['./bower_components/**/*.js', './public/js/min/anonymous.min.js', './bower_components/**/*.css', './public/css/**/*.css'], { read: false });
+  // Create LiveReload server
+  livereload.listen();
 
-    return target.pipe(inject(sources))
-        .pipe(gulp.dest('./dist'))
-});
+  // Watch any files in dist/, reload on change
+  gulp.watch(['dist/**']).on('change', livereload.changed);
 
-gulp.task('dist:iife', function() {
-    return gulp.src('./public/js/min/all.min.js')
-        .pipe(iife())
-        .pipe(rename('./js/min/anonymous.min.js'))
-        .pipe(gulp.dest('./public'))
-        .pipe(gulp.dest('./dist/public'));
-});
-
-gulp.task('serve:dist', ['dist:package'], function() {
-
-    browserSync.init({
-        server: {
-            baseDir: './dist'
-        }
-    });
-
-    /* If you use a proxy replace the previous code with the below script replacing 'yourlocal.dev' with your local proxy
-       
-        browserSync.init({
-            proxy: 'yourlocal.dev'
-        });
-
-   */
-
-    gulp.watch('./scss/*.scss', ['sass-watch']);
-
-    gulp.watch('./public/images/*', ['image-watch']);
-
-    gulp.watch('./public/**/*.html', ['html-watch']);
-
-    gulp.watch('./public/js/**/*.js', ['js-watch']);
-
-    gulp.watch('./bower_components/**/*.js', ['bower']);
-});
-
-gulp.task('dist:package', ['sass', 'bower', 'uglify-js', 'image', 'image-min', 'html', 'dist:iife', 'index:dist']);
-
-
-//TDD
-
-/* Run test once and exit */
-
-gulp.task('spec', function(done) {
-    new Server({
-        configFile: __dirname + '/karma.conf.js',
-        singleRun: true
-    }, done).start();
-});
-
-/* Watch for file changes and re-run tests on each change */
-
-gulp.task('serve:spec', function(done) {
-    new Server({
-        configFile: __dirname + '/karma.conf.js'
-    }, done).start();
 });

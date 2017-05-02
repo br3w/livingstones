@@ -1,0 +1,24 @@
+<!-- Title and Description  -->
+<h2 class="title align-center" ng-if="quest.title !=''">{{quest.title}}</h2>
+<p class="text align-center" ng-if="quest.description !=''">{{quest.description}}</p>
+
+<!-- Form questions -->
+<form id="info" class="center-quest" ng-submit="submitHtml()">
+
+    <!-- Component -->
+    <input type="hidden" ng-model="next" name="next" value="{{quest.next}}">
+
+
+    <!-- Button Send -->
+    <md-button
+        class="md-raised md-primary bt-modulo"
+        type="submit"
+        name="button">Próximo
+    </md-button>
+
+    <!-- Button Back -->
+    <button  ng-if="idmodulo > 0" ng-click="sendBackPage()" class="bt-back" type="button" name="button"><i class="icon-seta"></i>Voltar</button>
+
+</form>
+
+<hr class="bar-quest">

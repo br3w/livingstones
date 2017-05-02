@@ -1,0 +1,397 @@
+{
+    "modulo":{
+        "id":"smoking",
+        "title":"Smoking",
+        "image":"healthsmoking.jpg",
+        "description":"",
+        "helper":[
+            {
+                "text":"Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            {
+                "text":"Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+        ],
+        "helperload":"",
+
+        "questions":[
+            {
+                "id":"smoker",
+                "title":"Você fuma cigarros?",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"Sim",
+                        "value": "YES",
+                        "next":"smoker_longevity_year"
+                    },
+                    {
+                        "title":"Não",
+                        "value": "NO",
+                        "next":"close"
+                    },
+                    {
+                        "title":"Sou um ex-fumante",
+                        "value":"EX",
+                        "next":"ex_smoker_longevity_year"
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "Neste tópico só são considerados cigarros, o consumo de charutos, narguiles ou qualquer droga inalante não são levados em conta. Isto também é válido para ex-fumantes."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"smoker_longevity_year",
+                "title":"Há quanto tempo você fuma?",
+                "description":"",
+                "image":"",
+                "type":"range",
+                "input":"selectlist",
+                "next":"smoker_packs_per_day",
+                "options":[
+
+                    {
+                        "range":[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59,60],
+                        "name":"smoker_longevity_year",
+                        "title": "Anos",
+                        "labels": {
+                            "plural":"anos",
+                            "singular":"ano"
+                        }
+                    },
+                    {
+                        "range":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+                        "name":"smoker_longevity_month",
+                        "title": "Meses",
+                        "labels": {
+                            "plural":"meses",
+                            "singular":"mês"
+                        }
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "Leve em consideração todo o tempo em que você fumou, intervalos nos quais você não fumou não devem ser contabilizados no período. Exemplo: Fumei durante três anos, parei por dois anos e voltei a fumar fazem quatro anos. O tempo indicado deve ser de sete anos (três do primeiro período e quatro do período atual)."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"smoker_packs_per_day",
+                "title":"Quantos cigarros você fuma por dia?",
+                "description":"",
+                "image":"",
+                "type":"range",
+                "input":"selectlist",
+                "next":"smoker_stop",
+                "options":[
+                    {
+                        "range":[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59,60],
+                        "unid": "_cigarro",
+                        "name":"smoker_packs_per_day",
+                        "labels": {
+                            "plural":"cigarros",
+                            "singular":"cigarro"
+                        }
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "Leve em consideração a média de cigarros fumados durante a semana, durante alguns dias você pode estar mais propenso a fumar, como durante eventos sociais ou períodos de stress."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"smoker_stop",
+                "title":"Você tem vontade de parar de fumar?",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"Sim",
+                        "value": true,
+                        "next":"smoker_cigarrete_after_wake"
+                    },
+                    {
+                        "title":"Não",
+                        "value": false,
+                        "next":"close"
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "Responda sim apenas se você estiver disposto a mudar completamente seus hábitos, inclusive realizando tratamento médico ou psicológico."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"smoker_cigarrete_after_wake",
+                "title":"Quanto tempo depois de acordar você fuma seu primeiro cigarro?",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"Nos primeiros 5 minutos",
+                        "value":"5_MIN",
+                        "next":"smoker_public_places"
+                    },
+                    {
+                        "title":"Entre 6 a 30 minutos",
+                        "value":"6_30_MIN",
+                        "next":"smoker_public_places"
+                    },
+                    {
+                        "title":"Entre 31 a 60 minutos",
+                        "value":"31_60_MIN",
+                        "next":"smoker_public_places"
+                    },
+                    {
+                        "title":"Mais de 60 minutos",
+                        "value":"60_PLUS_MIN",
+                        "next":"smoker_public_places"
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description ":[
+                        {
+                            "text": "O tempo que você demora para fumar seu primeiro cigarro do dia é um bom indicador do seu nível de dependência."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"smoker_public_places",
+                "title":"Você acha difícil não fumar em lugares aonde não é permitido fumar?",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"Sim",
+                        "value": true,
+                        "next":"smoker_first_cigar"
+                    },
+                    {
+                        "title":"Não",
+                        "value": false,
+                        "next":"smoker_first_cigar"
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "Achar difícil não fumar em lugares proibidos é muito frequente em quem tem mais adicção ao cigarro."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"smoker_first_cigar",
+                "title":"Qual cigarro do dia te da mais satisfação ao fumar?",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"O primeiro da manhã",
+                        "value": true,
+                        "next":"smoker_morning"
+                    },
+                    {
+                        "title":"Os outros",
+                        "value": false,
+                        "next":"smoker_morning"
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "É comum que quem sinta mais prazer no primeiro cigarro do dia tenha uma dificuldade maior de parar de fumar. Tente postergar aos poucos seus cigarros, começando pelo primeiro do dia!"
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"smoker_morning",
+                "title":"Você fuma mais frequentemente pela manhã?",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"Sim",
+                        "value": true,
+                        "next":"smoker_sick"
+                    },
+                    {
+                        "title":"Não",
+                        "value": false,
+                        "next":"smoker_sick"
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "Fumar mais frequentemente pela manhã pode indicar um nível de vício maior."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"smoker_sick",
+                "title":"Você fuma mesmo quando doente aonde você deveria ficar na cama descansando?",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"Sim",
+                        "value": true,
+                        "next":"close"
+                    },
+                    {
+                        "title":"Não",
+                        "value": false,
+                        "next":"close"
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "Fumar doente pode prejudicar ainda mais a sua saúde. Vale a pena tentar evitar fumar se estiver doente e precisar ficar na cama descansando."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"ex_smoker_packs_per_day",
+                "title":"Quantos cigarros você fuma por dia?",
+                "description":"",
+                "image":"",
+                "type":"range",
+                "input":"selectlist",
+                "next":"close",
+                "options":[
+                    {
+                        "range":[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59,60],
+                        "unid": "_cigarro",
+                        "name":"smoker_packs_per_day",
+                        "labels": {
+                            "plural":"cigarros",
+                            "singular":"cigarro"
+                        }
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "Leve em consideração a média de cigarros fumados durante a semana, durante alguns dias você pode estar mais propenso a fumar, como durante eventos sociais ou períodos de stress."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"ex_smoker_longevity_year",
+                "title":"Quanto tempo você fumou?",
+                "description":"",
+                "image":"",
+                "type":"range",
+                "input":"selectlist",
+                "next":"ex_longevity_year",
+                "options":[
+                    {
+                        "range":[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59,60],
+                        "unid": "_cigarro",
+                        "name":"smoker_longevity_year",
+                        "labels": {
+                            "plural":"anos",
+                            "singular":"ano"
+                        }
+                    },
+                    {
+                        "range":[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+                        "unid": "_cigarro",
+                        "name":"smoker_longevity_month",
+                        "labels": {
+                            "plural":"meses",
+                            "singular":"mês"
+                        }
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "Leve em consideração todo o tempo em que você fumou, intervalos nos quais você não fumou não devem ser contabilizados no período. Exemplo: Fumei durante três anos, parei por dois anos e voltei a fumar fazem quatro anos. O tempo indicado deve ser de sete anos (três do primeiro período e quatro do período atual)."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"ex_longevity_year",
+                "title":"Há quanto tempo você parou de fumar?",
+                "description":"",
+                "image":"",
+                "type":"range",
+                "input":"selectlist",
+                "next":"ex_smoker_packs_per_day",
+                "options":[
+                    {
+                        "range":[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
+                        "name":"ex_longevity_year",
+                        "labels": {
+                            "plural":"anos",
+                            "singular":"ano"
+                        }
+                    },
+                    {
+                        "range":[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+                        "name":"ex_longevity_month",
+                        "labels": {
+                            "plural":"meses",
+                            "singular":"mês"
+                        }
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "É importante sabermos há quanto tempo você parou de fumar porque esse tempo influencia nos benefícios que parar de fumar traz à saúde."
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

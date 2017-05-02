@@ -1,0 +1,83 @@
+{
+    "modulo":{
+        "id":"medication",
+        "title":"Medicações de uso contínuo",
+        "image":"medication.jpg",
+        "description":"A prática de atividades físicas é muito importante para a saúde do corpo e da mente. Vamos avaliar um pouco como andam seus exercícios para ver se você está praticando o suficiente ou se precisa praticar um pouquinho mais!",
+        "helper":[
+            {
+                "text":"Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            {
+                "text":"Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+        ],
+        "helperload":"",
+
+        "questions":[
+            {
+                "id":"medication",
+                "title":"Você toma alguma medicação de uso contínuo?",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"Sim",
+                        "value": true,
+                        "next":"medication_type"
+                    },
+                    {
+                        "title":"Não",
+                        "value": false,
+                        "next":"close"
+                    }
+                ],
+                "helper": {
+                    "title":"Hello, do you have any questions?",
+                    "description":[
+                        {
+                            "text": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"medication_type",
+                "title":"Para que você toma esse remédio?",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"check",
+                "next": "close",
+                "options":[
+                    {
+                        "title":"Hipertensão",
+                        "value":"HYPERTENSION"
+                    },
+                    {
+                        "title":"Colesterol",
+                        "value":"CHOLESTEROL"
+                    },
+                    {
+                        "title":"Diabetes",
+                        "value":"DIABETES"
+                    },
+                    {
+                        "title":"Câncer",
+                        "value":"CANCER"
+                    }
+                ],
+                "helper": {
+                    "title":"Hello, do you have any questions?",
+                    "description":[
+                        {
+                            "text": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

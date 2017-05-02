@@ -1,0 +1,34 @@
+<h2 class="title gray3 align-center" ng-if="quest.title !=''">{{quest.title}}</h2>
+<p  ng-if="quest.description !=''">{{quest.description}}</p>
+
+<form class="center-quest" id="select" ng-submit="submitSelect(list)">
+    <fieldset class="select-list" input-select-list >
+        <div class="load-selectlist" layout="row" layout-align="center center">
+            <md-progress-circular md-mode="indeterminate"  md-diameter="76"></md-progress-circular>
+        </div>
+        <input type="hidden" id="list" name="list" ng-model="list.input" value="" />
+        <div class="bar-yellow-back"></div>
+        <div ng-repeat="option in quest.options track by $index" class="scroll-conteiner container-{{quest.options.length}} border-container">
+            <ul  class="group-list column-{{$index+1}}">
+                <li class="option">
+                    <span>{{option.title}}</span>
+                </li>
+                <li ng-repeat="num in option.range track by $index" class="option">
+                    <span ng-if="num > 1 ">{{num}} {{option.labels.plural}} </span>
+                    <span ng-if="num <= 1 ">{{num}} {{option.labels.singular}} </span>
+                </li>
+            </ul>
+            {{id}}
+        </div>
+    </fieldset>
+    <md-button
+        id="sendForm"
+        class="md-raised md-primary  bt-modulo"
+        type="submit"
+        name="button"
+        disabled>Próximo
+    </md-button>
+    <button  ng-if="idmodulo > 0" ng-click="sendBackPage()" class="bt-back" type="button" name="button"><i class="icon-seta"></i>Voltar</button>
+</form>
+
+<hr class="bar-quest">

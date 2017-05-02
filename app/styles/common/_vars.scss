@@ -1,0 +1,106 @@
+
+// Color: Variables and Classes
+
+$cb-blue:    #2cbdd2;
+$cb-blue-l:  #46cddc;
+$cb-white:   #ffffff;
+$cb-gray:    #a4b2bf;
+$cb-gray-el: #f1f1f1;
+$cb-gray-l:  #d4ddeb;
+$cb-gray-d:  #606569;
+$cb-black:   #575958;
+$cb-red:     #e20404;
+$cb-red-d:   #850000;
+$cb-orange:  #ffc600;
+$cb-orange-d:#ff8400;
+$cb-green:   #46d500;
+$cb-yellow:  #fec106;
+
+.cb-blue     { color:$cb-blue;}
+.cb-white    { color:$cb-white;}
+.cb-gray     { color:$cb-gray;}
+.cb-gray-l   { color:$cb-gray-l;}
+.cb-gray-d   { color:$cb-gray-d;}
+.cb-black    { color:$cb-black;}
+.cb-red      { color:$cb-red;}
+.cb-orange   { color:$cb-orange;}
+.cb-orange-d { color:$cb-orange-d;}
+.cb-green    { color:$cb-green;}
+.cb-yellow   { color:$cb-yellow;}
+
+// Font size: Variables and Classes
+
+$fs-1    : .6rem;
+$fs-2    : .7rem;
+$fs-3    : .8rem;
+$fs-4    : .9rem;
+$fs-5    : 1rem;
+$fs-6    : 1.1rem;
+$fs-7    : 1.2rem;
+$fs-8    : 1.3rem;
+$fs-9    : 1.4rem;
+$fs-10   : 1.5rem;
+$fs-11   : 1.6rem;
+$fs-12   : 1.7rem;
+$fs-13   : 1.8rem;
+$fs-14   : 1.9rem;
+$fs-15   : 2rem;
+$fs-16   : 2.1rem;
+$fs-17   : 2.2rem;
+$fs-18   : 2.3rem;
+$fs-19   : 2.4rem;
+$fs-20   : 2.5rem;
+
+.fs-1   { font-size: $fs-1 ;}
+.fs-2   { font-size: $fs-2 ;}
+.fs-3   { font-size: $fs-3 ;}
+.fs-4   { font-size: $fs-4 ;}
+.fs-5   { font-size: $fs-5 ;}
+.fs-6   { font-size: $fs-6 ;}
+.fs-7   { font-size: $fs-7 ;}
+.fs-8   { font-size: $fs-8 ;}
+.fs-9   { font-size: $fs-9 ;}
+.fs-10  { font-size: $fs-10;}
+.fs-11  { font-size: $fs-11;}
+.fs-12  { font-size: $fs-12;}
+.fs-13  { font-size: $fs-13;}
+.fs-14  { font-size: $fs-14;}
+.fs-15  { font-size: $fs-15;}
+
+
+// background-color
+$background--light: #eee;
+$background--dark: #222;
+$background--light-blue: #d7f9fd;
+$background--light-green: #dafff7;
+
+// Color
+
+$color-white: #fff;
+$color-blue: #3dbfce;
+$color-red: #fb5a5a;
+$color-green: #2dd67b;
+$color-yellow: #f7cc67;
+
+$color-header: #f6f6f6;
+$color-boxTop: #c4a7aa;
+$color-gray1: #d4ddeb;
+$color-gray2: #a4b2bf;
+$color-gray3: #606569;
+$color-gray4: #575958;
+
+// spacing
+$full-space: 40px;
+$half-space: 20px;
+
+// font sizing
+$font-size--xs: 10px;
+$font-size--sm: 12px;
+$font-size--md: 16px;
+$font-size--lg: 24px;
+$font-size--xl: 32px;
+
+// Button color
+$button-face: #446de9;
+$button-google: #f03c3d;
+$button-sign: #3dbfce;

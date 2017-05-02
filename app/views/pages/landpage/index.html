@@ -1,0 +1,26 @@
+<section id="login" class="device" jquery-events>
+    <!-- Header -->
+    <header
+        class="header"
+        ng-include="'./htmls/views/login/partials/header.html'">
+    </header>
+
+    <!-- Loading-->
+    <content
+        ng-if="load == 'loading'" class="content"
+        ng-include="'./htmls/views/user/partials/load-content.html'">
+    </content>
+
+    <!-- Home -->
+    <content
+        ng-if="load == 'loaded' && content == 'home'" class="content"
+        ng-include="'./htmls/views/landpage/pages/home.html'">
+    </content>
+
+    <!-- 404 -->
+    <content
+        ng-if="load == 'loaded' && content == '404'" class="content"
+        ng-include="'./htmls/views/landpage/pages/404.html'">
+    </content>
+
+</section>

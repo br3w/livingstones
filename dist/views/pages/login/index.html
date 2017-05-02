@@ -1,0 +1,32 @@
+<section id="login" class="device" jquery-events>
+    <!-- Header -->
+    <header
+        class="header"
+        ng-include="'./htmls/views/login/partials/header.html'">
+    </header>
+
+    <!-- Loading-->
+    <content
+        ng-if="load == 'loading'" class="content"
+        ng-include="'./htmls/views/user/partials/load-content.html'">
+    </content>
+
+    <!-- Login -->
+    <content
+        ng-if="load == 'loaded' && content == 'login'" class="content"
+        ng-include="'./htmls/views/login/pages/login.html'">
+    </content>
+
+    <!-- Remmenber -->
+    <content
+        ng-if="load == 'loaded' && content == 'remember'" class="content"
+        ng-include="'./htmls/views/login/pages/remember.html'">
+    </content>
+
+    <!-- Password Update -->
+    <content
+        ng-if="load == 'loaded' && content == 'passwordupdate'" class="content"
+        ng-include="'./htmls/views/login/pages/password-update.html'">
+    </content>
+
+</section>

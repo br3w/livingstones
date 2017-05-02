@@ -1,0 +1,149 @@
+{
+    "modulo":{
+        "id":"drinking",
+        "title":"Drinking",
+        "image":"healthdrinking.jpg",
+        "description":"A prática de atividades físicas é muito importante para a saúde do corpo e da mente. Vamos avaliar um pouco como andam seus exercícios para ver se você está praticando o suficiente ou se precisa praticar um pouquinho mais!",
+        "helper":[
+            {
+                "text":"Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            {
+                "text":"Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+        ],
+        "helperload":"",
+
+        "questions":[
+            {
+                "id":"frequency_year",
+                "title":"Com que frequência você costuma consumir bebidas alcóolicas?",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"Nunca",
+                        "value":"NONE",
+                        "next":"close"
+                    },
+                    {
+                        "title":"Mensalmente ou menos",
+                        "value":"MONTHLY",
+                        "next":"serving_per_day"
+                    },
+                    {
+                        "title":"2 a 4 vezes por mês",
+                        "value":"2_4_MONTHLY",
+                        "next":"serving_per_day"
+                    },
+                    {
+                        "title":"2 a 3 vezes por semana",
+                        "value":"2_3_WEEKLY",
+                        "next":"serving_per_day"
+                    },
+                    {
+                        "title":"4 ou mais vezes por semana",
+                        "value":"4_PLUS_WEEKLY",
+                        "next":"serving_per_day"
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "A frequência deve indicar a quantidade de vezes em que você consumiu bebidas alcoólicas, independente de se ter sido no mesmo dia. Exemplo: Bebi uma taça de vinho durante o almoço e fui a um happy hour no mesmo dia. Deve se contabilizar como se tendo ingerido bebida alcoólica duas vezes."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"serving_per_day",
+                "title":"Quantos drinks você consome em um dia típico em que bebe?",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"1 ou 2",
+                        "value":"ONE_TWO",
+                        "next":"frequency_six_drinks_year"
+                    },
+                    {
+                        "title":"3 ou 4",
+                        "value":"THREE_FOUR",
+                        "next":"frequency_six_drinks_year"
+                    },
+                    {
+                        "title":"5 ou 6",
+                        "value":"FIVE_SIX",
+                        "next":"frequency_six_drinks_year"
+                    },
+                    {
+                        "title":"7 ou 8",
+                        "value":"SEVEN_NINE",
+                        "next":"frequency_six_drinks_year"
+                    },
+                    {
+                        "title":"10 ou mais",
+                        "value":"TEN_PLUS",
+                        "next":"frequency_six_drinks_year"
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "A dose padrão de um drink é equivalente a uma taça de vinho, uma latinha de cerveja ou um copo de whisky."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"frequency_six_drinks_year",
+                "title":"Com que frequência você tomou 6 ou mais drinks na mesma ocasião no último ano?",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"Nenhuma vez",
+                        "value":"NONE",
+                        "next":"close"
+                    },
+                    {
+                        "title":"Mensalmente ou menos",
+                        "value":"MONTHLY_LESS",
+                        "next":"close"
+                    },
+                    {
+                        "title":"Mensalmente",
+                        "value":"MONTHLY",
+                        "next":"close"
+                    },
+                    {
+                        "title":"Semanalmente",
+                        "value":"WEEKLY",
+                        "next":"close"
+                    },
+                    {
+                        "title":"Diariamente ou quase isso",
+                        "value":"DAILY",
+                        "next":"close"
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "Tomar mais de seis drinks em uma única ocasião indicam um exagero no consumo de álcool.<br>A dose padrão de um drink é equivalente a uma taça de vinho, uma latinha de cerveja ou um copo de whisky."
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

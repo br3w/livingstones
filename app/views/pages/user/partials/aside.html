@@ -1,0 +1,17 @@
+<div class="inner-aside">
+    <div class="aside-header">
+        <img class="aside-logo" src="images/logo.png" alt="Logomarca Medpass - Todos os direitos reservados" />
+        <button ng-click="setShowMenu()" type="type" class="bt-header close" name="button"></button>
+    </div>
+    <div class="aside-avatar">
+        <div class="avatar">
+            <div ng-class="dataUser.gender == 'MASCULINO' ? 'man' : 'woman'" class="inner"></div>
+        </div>
+        <h3>{{dataUser.name}}</h3>
+    </div>
+    <ul class="aside-content">
+        <li ng-class="content == 'dash' ? 'active':''"><a href="./#!/user/dash" ng-click="setShowMenu()"><span class="icon-link home"></span>Home</a></li>
+        <li ng-class="content == 'medico' ? 'active':''"><a href="./#!/user/medico" ng-click="setShowMenu()"><span class="icon-link medico"></span>Médico</a></li>
+        <li><a href="./#!/user/medico" ng-click="logoutPage()" ><span class="icon-link sair"></span>Sair</a></li>
+    </ul>
+</div>

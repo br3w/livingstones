@@ -1,0 +1,38 @@
+<!-- Title and Description  -->
+<h2 class="title align-center" ng-if="quest.title !=''">{{quest.title}}</h2>
+<p class="text align-center" ng-if="quest.description !=''">{{quest.description}}</p>
+
+<!-- Form questions -->
+<form class="center-quest" id="check" name="check" ng-submit="submitCheck(check.$valid)">
+
+    <!-- Component -->
+    <md-radio-group >
+        <div ng-repeat="option in quest.options track by $index">
+            <div layout='row' layout-padding layout-align="start center" >
+                <md-checkbox
+                    type="checkbox"
+                    value="{{option.value}}"
+                    ng-checked="exists(option.value, selected)"
+                    ng-click="toggle(option.value, selected)"
+                    class="input-check">
+                    {{option.title}}
+                </md-checkbox>
+            </div>
+        </div>
+    </md-radio-group>
+
+    <!-- Button Send -->
+    <md-button
+        class="md-raised md-primary bt-modulo"
+        type="submit"
+        name="button"
+        ng-class="!send ? 'disable':'sign'"
+        ng-disabled="!send">Próximo
+    </md-button>
+
+    <!-- Button Back -->
+    <button  ng-if="idmodulo > 0" ng-click="sendBackPage()" class="bt-back" type="button" name="button"><i class="icon-seta"></i>Voltar</button>
+
+</form>
+
+<hr class="bar-quest">

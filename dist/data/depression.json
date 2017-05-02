@@ -1,0 +1,172 @@
+{
+    "modulo":{
+        "id":"depression",
+        "title":"Depression and anxiety",
+        "image":"depresssion.jpg",
+        "description":"A prática de atividades físicas é muito importante para a saúde do corpo e da mente. Vamos avaliar um pouco como andam seus exercícios para ver se você está praticando o suficiente ou se precisa praticar um pouquinho mais!",
+        "helper":[
+            {
+                "text":"Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            {
+                "text":"Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+        ],
+        "helperload":"",
+
+        "questions":[
+            {
+                "id":"nervous_anxious",
+                "title":"Se sentiu nervoso, ansioso ou no limite de ter uma crise nervosa",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"Nem um pouco",
+                        "value":"NO",
+                        "next":"worries"
+                    },
+                    {
+                        "title":"Alguns dias",
+                        "value":"FEW_DAYS",
+                        "next":"worries"
+                    },
+                    {
+                        "title":"Mais da metade dos dias",
+                        "value":"MANY_DAYS",
+                        "next":"worries"
+                    },
+                    {
+                        "title":"Quase todo dia",
+                        "value":"ALMOST_ALWAYS",
+                        "next":"worries"
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "Não é ideal ter esses sentimentos durante a maior parte de sua semana, caso ocorram com frequência podem indicar a necessidade de buscar ajuda psicológica."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"worries",
+                "title":"Não conseguiu parar ou controlar suas preocupações",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"Nem um pouco",
+                        "value":"NO",
+                        "next":"interest_pleasure"
+                    },
+                    {
+                        "title":"Alguns dias",
+                        "value":"FEW_DAYS",
+                        "next":"interest_pleasure"
+                    },
+                    {
+                        "title":"Mais da metade dos dias",
+                        "value":"MANY_DAYS",
+                        "next":"interest_pleasure"
+                    },
+                    {
+                        "title":"Quase todo dia",
+                        "value":"ALMOST_ALWAYS",
+                        "next":"interest_pleasure"
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "Não é ideal ter esses sentimentos durante a maior parte de sua semana, caso ocorram com frequência podem indicar a necessidade de buscar ajuda psicológica."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"interest_pleasure",
+                "title":"Sentiu pouco prazer ou interesse em fazer coisas",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"Nem um pouco",
+                        "value":"NO",
+                        "next":"depressive"
+                    },
+                    {
+                        "title":"Alguns dias",
+                        "value":"FEW_DAYS",
+                        "next":"depressive"
+                    },
+                    {
+                        "title":"Mais da metade dos dias",
+                        "value":"MANY_DAYS",
+                        "next":"depressive"
+                    },
+                    {
+                        "title":"Quase todo dia",
+                        "value":"ALMOST_ALWAYS",
+                        "next":"depressive"
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "Não é ideal ter esses sentimentos durante a maior parte de sua semana, caso ocorram com frequência podem indicar a necessidade de buscar ajuda psicológica."
+                        }
+                    ]
+                }
+            },
+            {
+                "id":"depressive",
+                "title":"Se sentiu para baixo, deprimido ou sem esperanças",
+                "description":"",
+                "image":"",
+                "type":"list",
+                "input":"radio",
+                "options":[
+                    {
+                        "title":"Nem um pouco",
+                        "value":"NO",
+                        "next":"close"
+                    },
+                    {
+                        "title":"Alguns dias",
+                        "value":"FEW_DAYS",
+                        "next":"close"
+                    },
+                    {
+                        "title":"Mais da metade dos dias",
+                        "value":"MANY_DAYS",
+                        "next":"close"
+                    },
+                    {
+                        "title":"Quase todo dia",
+                        "value":"ALMOST_ALWAYS",
+                        "next":"close"
+                    }
+                ],
+                "helper": {
+                    "title":"",
+                    "description":[
+                        {
+                            "text": "Não é ideal ter esses sentimentos durante a maior parte de sua semana, caso ocorram com frequência podem indicar a necessidade de buscar ajuda psicológica."
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

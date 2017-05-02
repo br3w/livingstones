@@ -1,0 +1,133 @@
+{
+    "modulo": {
+        "id": "family",
+        "title": "Family History",
+        "image": "morbid.jpg",
+        "description": "A prática de atividades físicas é muito importante para a saúde do corpo e da mente. Vamos avaliar um pouco como andam seus exercícios para ver se você está praticando o suficiente ou se precisa praticar um pouquinho mais!",
+        "helper": [
+            {
+                "text": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            },
+            {
+                "text": "Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            }
+        ],
+        "helperload": "",
+        "questions": [
+            {
+                "id": "family_cancer",
+                "title": "Seu pai, sua mãe ou seus irmãos tem ou já tiveram câncer?",
+                "description": "",
+                "image": "",
+                "type": "list",
+                "input": "radio",
+                "options": [
+                    {
+                        "title": "Sim",
+                        "value": true,
+                        "next": "family_cancer_type"
+                    },
+                    {
+                        "title": "Não",
+                        "value": false,
+                        "next": "family_cardio"
+                    }
+                ],
+                "helper": {
+                    "title": "",
+                    "description": [
+                        {
+                            "text": "Câncer de mama e câncer de próstata são frequentes, mas quaisquer outros tipos de câncer devem ser considerados."
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "family_cancer_type",
+                "title": "Qual tipo?",
+                "description": "",
+                "image": "",
+                "type": "list",
+                "next": "family_cardio",
+                "input": "check",
+                "options": [
+                    {
+                        "title": "Mama",
+                        "value": "BREAST"
+                    },
+                    {
+                        "title": "Próstata",
+                        "value": "PROSTATE"
+                    },
+                    {
+                        "title": "Outros",
+                        "value": "OTHER"
+                    }
+                ],
+                "helper": {
+                    "title": "",
+                    "description": [
+                        {
+                            "text": "Câncer de mama e câncer de próstata são muito comuns e se detectados cedo, tem grandes chances de cura, por isso é importante saber do histórico familiar e cuidar da sua saúde."
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "family_cardio",
+                "title": "Seu pai, sua mãe ou seus irmãos já tiverem alguma doença cardiovascular?",
+                "description": "",
+                "image": "",
+                "type": "list",
+                "input": "radio",
+                "options": [
+                    {
+                        "title": "Sim",
+                        "value": true,
+                        "next": "family_fracture_aneurism"
+                    },
+                    {
+                        "title": "Não",
+                        "value": false,
+                        "next": "family_fracture_aneurism"
+                    }
+                ],
+                "helper": {
+                    "title": "",
+                    "description": [
+                        {
+                            "text": "Você deve levar em consideração apenas homens que tiveram alguma doença cardiovascular abaixo dos 55 anos e mulheres abaixo dos 65 anos. Um histórico familiar de doenças cardíacas pode aumentar o seu risco individual, por isso é importante saber para poder cuidar melhor da sua saúde."
+                        }
+                    ]
+                }
+            },
+            {
+                "id": "family_fracture_aneurism",
+                "title": "Seu pai, sua mãe ou seus irmãos já tiveram fratura de quadril ou aneurisma de aorta?",
+                "description": "",
+                "image": "",
+                "type": "list",
+                "input": "radio",
+                "options": [
+                    {
+                        "title": "Sim",
+                        "value": true,
+                        "next": "close"
+                    },
+                    {
+                        "title": "Não",
+                        "value": false,
+                        "next": "close"
+                    }
+                ],
+                "helper": {
+                    "title": "",
+                    "description":[
+                        {
+                            "text": "A aorta é o principal condutor de sangue pelo corpo, tem a espessura de uma mangueira de jardim, e vai do seu coração até o centro do seu peito e abdôme. Problemas na aorta costumam ser congênitos, aumentando seus riscos de possuir a mesma doença."                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

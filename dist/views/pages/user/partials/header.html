@@ -1,0 +1,37 @@
+<div class="nav-menu">
+    <div class="center">
+
+        <!-- Menu version mobile -->
+        <div class="menu-version-mobile" hide-gt-sm>
+            <md-menu>
+                <md-button ng-click="$mdMenu.open($event)" class="md-icon-button"><img src="svg/ic_menu_black_24px.svg" width="24" height="24" alt="Icom Menu - Mobile version"></md-button>
+                <md-menu-content>
+                    <md-menu-item><md-button ng-href="./#!/user/dash">Home</md-button></md-menu-item>
+                    <md-menu-item><md-button ng-href="./#!/user/medico">Médico</md-button></md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </div>
+
+        <!-- Logo Medpass -->
+        <img class="logo-header" src="images/logo.png" alt="Logomarca Medpass - Todos os direitos reservados">
+
+        <!-- Menu version desktop -->
+        <div class="menu-version-desktop" hide-xs hide-sm>
+            <ul>
+                <li ng-class="content == 'dash' ? 'active':''"><a href="./#!/user/dash">Home</a></li>
+                <li ng-class="content == 'medico' ? 'active':''"><a href="./#!/user/medico">Médico</a></li>
+            </ul>
+        </div>
+
+        <!-- Menu profile -->
+        <div class="menu-profile">
+            <md-menu md-position-mode="target-right target">
+                <md-button ng-click="$mdMenu.open($event)" class="md-icon-button"><img src="svg/ic_more_vert_black_24px.svg" width="24" height="24" alt="Icon profile"></md-button>
+                <md-menu-content>
+                    <md-menu-item><md-button ng-href="./#!/user/faq">FAQ / Fale Conosco</md-button></md-menu-item>
+                    <md-menu-item><md-button ng-href="./#!/login">Sair</md-button></md-menu-item>
+                </md-menu-content>
+            </md-menu>
+        </div>
+    </div>
+</div>

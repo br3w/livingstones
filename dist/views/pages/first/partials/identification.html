@@ -1,0 +1,16 @@
+<div ng-controller="firstUserIdentificationCtrl as firstuseridentification">
+
+    <md-card-content ng-if=" accesso === true">
+        <div style="height:200px" layout="row" layout-align="center center">
+            <md-progress-circular md-mode="indeterminate"  md-diameter="36"></md-progress-circular>
+        </div>
+    </md-card-content>
+
+
+    <md-card-content ng-if=" accesso === false" class="mp-box-text">
+        <div class="mp-text-box">
+            <p class="text-left">Você está tentando acessar uma área restrita.</p>
+            <p class="text-left">Caso tenha recebido o convite corretamente, verifique se o link do seu navegador é idêntico ao do informado por e-mail. Se o problema persistir, entre em contato com o departamento de Recursos Humanos da sua empresa.</p>
+        </div>
+    </md-card-content>
+</div>

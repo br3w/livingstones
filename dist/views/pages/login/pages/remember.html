@@ -1,0 +1,69 @@
+<md-card class="md-margin-welcome" flex-gt-xs="100" layout="column" ng-controller="loginRememberCtrl as loginremember">
+    <md-card-header class="mp-header-welcome">
+        <md-card-header-text>
+            <span class="md-title">Redefinição de senha</span>
+        </md-card-header-text>
+    </md-card-header>
+
+    <md-card-content ng-if="status == 'start'" class="mp-box-text md-margin">
+        <div class="mp-text-box">
+            <p class="text-left">Insira o e-mail que você usou no cadastro. Nós enviaremos um e-mail com seu nome de usuário e um link para você redefinir sua senha.</p>
+        </div>
+    </md-card-content>
+
+    <!-- Show Form -->
+    <md-card-content ng-show="status == 'start'" class="mp-box-text" style="margin:-50px 16px 16px 16px">
+
+        <form class="mp-login-user" name="userRemember" id="userRemember" ng-submit="rememberUserPassword(userRemember.$valid)" novalidate>
+
+            <md-input-container class="mp-form-row md-block">
+                <label>Email</label>
+                <input
+                type="email"
+                name="email"
+                ng-model="remember.email"
+                ng-pattern="/^.+@.+\..+$/"
+                autocomplete="off"
+                required
+                />
+                <div ng-messages="userRemember.email.$error" ng-hide="showHints">
+                    <div ng-message="required">Email deve ser preenchido</div>
+                    <div ng-message="pattern">Insira um email válido</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="mp-form-row md-block">
+                <md-button type="submit" class="md-raised md-primary mp-bt-send">Enviar</md-button>
+            </md-input-container>
+
+            <div  ng-show="load === 'loading'">
+                <div layout="row" layout-align="center center">
+                    <md-progress-circular md-mode="indeterminate"  md-diameter="36"></md-progress-circular>
+                </div>
+            </div>
+
+            <div ng-show="status === 'error'">
+                <p class="mp-error text-center">{{message}}<p>
+            </div>
+        </form>
+    </md-card-content>
+
+    <!-- Show Success -->
+    <md-card-content class="mp-box-text  md-margin" ng-if="status === 'success'">
+        <div class="mp-text-box">
+            <div class="mp-text-box">
+                <p class="text-left">Um e-mail de confirmação foi enviado para:</p>
+                <p class="text-left"><span class="mp-link-email">{{remember.email}}</span></p>
+                <p class="text-left">Verifique a sua caixa de entrada para confirmar seu cadastro. Acesse o link para validar sua conta e começar a cuidar melhor da sua saúde!</p>
+            </div>
+        </div>
+    </md-card-content>
+
+    <!-- Show Error -->
+    <md-card-content class="mp-box-text" ng-if="status === 'error'">
+        <div class="mp-text-box">
+            <p class="text-left">{{message}}</p>
+        </div>
+    </md-card-content>
+
+</md-card>

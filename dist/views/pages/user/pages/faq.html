@@ -1,0 +1,114 @@
+<div class="box-all-content cb-white">
+
+    <md-card flex-gt-xs="100" layout="column">
+
+        <!-- Title -->
+        <md-card-header class="mp-header-princial">
+            <md-card-header-text>
+                <span class="md-title">Perguntas Frequentes</span>
+            </md-card-header-text>
+        </md-card-header>
+
+        <!-- Content -->
+        <md-card-content class="mp-box-text md-margin" layout-xs="column" layout="row">
+
+            <div class="mp-text-box md-margin" flex-xs="100" flex="60"  flex-order-xs="2">
+
+                <div class="box-acorddion">
+                    <h3 class="text-title-acorddion">Que segurança tenho ao fornecer meus dados no site?<span class="icon-accordion"></span></h3>
+                    <md-card-content class="content-acorddion">
+                        <p class="text-left">Todas as suas informações pessoais são enviadas de forma criptografada para o site da medpass.com.br através do certificado de criptografia fornecido por uma Autoridade Certificadora confiável.</p>
+                        <p class="text-left">A medpass.com.br não divulgamos informações para terceiros.</p>
+                    </md-card-content>
+                </div>
+
+                <div class="box-acorddion">
+                    <h3 class="text-title-acorddion">Troquei meu e-mail, como faço para alterar em meu cadastro?<span class="icon-accordion"></span></h3>
+                    <md-card-content  class="content-acorddion">
+                        <p class="text-left">Caso tenha esquecido ou trocado seu e-mail, será necessário criar um novo cadastro com um e-mail que você tenha acesso.</p>
+                        <p class="text-left">Nossa equipe de Atendimento não realiza alterações cadastrais.</p>
+                    </md-card-content>
+                </div>
+
+                <div class="box-acorddion">
+                    <h3 class="text-title-acorddion">Como faço para redefinir minha senha?<span class="icon-accordion"></span></h3>
+                    <md-card-content  class="content-acorddion">
+                        <p class="text-left">Acesse ao site medpass.com.br</p>
+                        <p class="text-left">Clique em Esqueci minha senha e, em seguida, você será questionado por seu e-mail cadastrado.</p>
+                        <p class="text-left">Digite seu e-mail no campo solicitado e clique no botão ENVIAR.</p>
+                        <p class="text-left">Você receberá por e-mail um link para a redefinição da senha.</p>
+                        <p class="text-left">Acesse-o, insira a nova senha nos campos solicitados e clique em ALTERAR SENHA.</p>
+                    </md-card-content>
+                </div>
+
+                <div class="box-acorddion">
+                    <h3 class="text-title-acorddion">Não estou recebendo e-mail para redefinir a senha ou ativar meu cadastro, o que fazer?<span class="icon-accordion"></span></h3>
+                    <md-card-content  class="content-acorddion">
+                        <p class="text-left">Quando você solicita a redefinição de senha, nós enviamos instantaneamente um e-mail para o endereço cadastrado com um link para a troca de senha.</p>
+                        <p class="text-left">Se você possui um cadastro novo ou ficou muito tempo sem acessar sua conta, é preciso ativá-la através do e-mail de ativação de conta, que também é enviado automaticamente.</p>
+                        <p class="text-left">Caso você não consiga visualizar as nossas mensagens, faça uma busca em sua caixa de e-mails, procure pelo remetente suporte@medpass.com. Se o nosso e-mail não estiver na caixa de entrada, verifique as outras pastas, a mensagem pode ter sido movida por um filtro de spam ou regra de e-mail, direcionando para a pasta de Spam, Indesejadas, Lixo, Itens Apagados, Arquivo ou E-mail secundário.</p>
+                    </md-card-content>
+                </div>
+
+            </div>
+
+            <div class="mp-text-box md-margin" flex-xs="100" flex="40"  flex-order-xs="2">
+                <!-- SEARCH FALSE -->
+                <md-list>
+                    <md-list-item class="mp-content-form" layout="row"  layout-align="start center">
+                            <div class="md-list-item-text mp-header-form">
+                            <h4>Fale Conosco</h4>
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="mp-content-form" layout="row"  layout-align="start center">
+                        <div class="md-list-item-text mp-box-form">
+                            <form id="formshare" name="formshare" class="premed-form convite" ng-submit="addNewMedico(formshare.$valid)" novalidate>
+                                <input
+                                    type="text"
+                                    name="subject"
+                                    ng-model="contact.subject"
+                                    ng-pattern = 'verifyMail'
+                                    placeholder="Titulo"
+                                    autocomplete="off"
+                                    required
+                                />
+                                <input
+                                    type="text"
+                                    name="message"
+                                    ng-model="contact.message"
+                                    placeholder="Mensagem"
+                                    autocomplete="off"
+                                    required
+                                />
+
+                                <md-input-container class="form-create md-block">
+                                    <md-button
+                                        id="sharemedico"
+                                        type="submit"
+                                        ng-disabled="madic.$invalid"
+                                        class="md-raised md-primary ">
+                                        Enviar
+                                    </md-button>
+                                </md-input-container>
+
+                            </form>
+                        </div>
+                    </md-list-item>
+                    <md-list-item class="mp-content-form" layout="row"  layout-align="start center">
+                        <div class="md-list-item-text" flex="90">
+                            <p class="text">A MedPass conta com você para melhorar sempre a qualidade do atendimento e dos serviços prestados.</p>
+                            <p class="text"><br>Antes de entrar em contato conosco, confira se sua dúvida não está respondida na lista de Perguntas frequentes.</p>
+                            <p class="text"><br>Dúvidas, informações e sugestões, entre em contato através dos nossos canais de atendimento.</p>
+                            <p class="text">
+                                <br>Email: <a href="mailto:suporte@medpass.com.br">suporte@medpass.com.br</a>
+                                <br>Telefone: 011 3044-4426
+                            </p>
+                        </div>
+                    </md-list-item>
+                </md-list>
+            </div>
+
+        </md-card-content>
+
+    </md-card>
+</div>

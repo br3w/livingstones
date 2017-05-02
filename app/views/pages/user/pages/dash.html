@@ -1,0 +1,83 @@
+<div class="box-all-content cb-white">
+
+    <!-- Helper - Bem-te-vi -->
+    <md-card
+        class="md-margin-welcome"
+        flex-gt-xs="100"
+        layout="column"
+        ng-include="'./htmls/views/user/partials/welcome.html'">
+    </md-card>
+
+
+    <!-- Risco total -->
+    <md-card
+        class="md-margin"
+        flex-gt-xs="100"
+        layout="column"
+        ng-include="'./htmls/views/user/graph/risco-total.html'">
+    </md-card>
+
+
+    <div class="" layout-xs="column" layout="row">
+        <!-- Risco cardiovascular -->
+        <div flex-xs="" flex-gt-xs="50" layout="column">
+            <md-card
+                class="md-margin mp-box-text"
+                ng-include="'./htmls/views/user/graph/cardiovascular-risk.html'">
+            </md-card>
+        </div>
+        <!-- Depressão e Ansiedade -->
+        <div  flex-xs="100" flex-xs="100" flex="50">
+            <md-card
+                class="md-margin mp-box-text"
+                ng-include="'./htmls/views/user/graph/depression.html'">
+            </md-card>
+        </div>
+    </div>
+
+
+    <div class="" layout-xs="column" layout="row">
+
+        <!-- Indice de Massa corporal -->
+        <div  flex-xs="100" flex="50">
+            <md-card
+                class="md-margin mp-box-text"
+                ng-include="'./htmls/views/user/graph/body-mass.html'">
+            </md-card>
+        </div>
+
+        <!-- Câncer do Pulmão -->
+        <div flex-xs="" flex-gt-xs="50" layout="column">
+            <md-card
+                class="md-margin mp-box-text"
+                ng-include="'./htmls/views/user/graph/lung-cancer.html'">
+            </md-card>
+        </div>
+
+    </div>
+
+    <div class="" layout-xs="column" layout="row">
+
+        <!--Câncer de mama ou prostata -->
+        <div  flex-xs="100" flex-xs="100" flex="50">
+            <md-card
+                class="md-margin mp-box-text"
+                ng-if="user.gender =='MASCULINO'"
+                ng-include="'./htmls/views/user/graph/prostate-cancer.html'">
+            </md-card>
+            <!-- <md-card
+                class="md-margin mp-box-text"
+                ng-if="user.gender =='FEMININO'"
+                ng-include="'./htmls/views/user/graph/breast-cancer.html'">
+            </md-card> -->
+        </div>
+
+        <div flex-xs="" flex-gt-xs="50" layout="column">
+            <md-card
+                class="md-margin mp-box-text"
+                ng-include="'./htmls/views/user/graph/sleep-quality.html'">
+            </md-card>
+        </div>
+
+    </div>
+</div>

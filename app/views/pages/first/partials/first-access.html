@@ -1,0 +1,21 @@
+<md-card-content class="mp-box-text" ng-controller="firstAccessCtrl as firstaccess">
+
+    <div class="progress-box" ng-if="access == null" layout="row" layout-align="center center">
+        <md-progress-circular md-mode="indeterminate"  md-diameter="56"></md-progress-circular>
+    </div>
+
+    <div class="mp-text-box" ng-if="access == true">
+        <p class="text-left">Somos a primeira plataforma de análise de risco em saúde, focada 100% no paciente. Você agora faz parte de um grupo muito exclusivo que está recebendo esse privilégio em primeira mão.</p>
+        <p class="text-left">Fique tranquilo todos seu dados estarão seguros e somente você vai ter acesso a essas informações.</p>
+        <p class="text-left">Não deixe de aproveitar essa oportunidade! Preencha tudo corretamente para que possamos cuidar bem da sua saúde.</p>
+        <md-input-container class="mp-form-row md-block">
+            <md-button type="submit" ng-href="./#!/user-create/{{token}}" class="md-raised md-primary bt-first">Cadastrar</md-button>
+        </md-input-container>
+    </div>
+
+    <div class="mp-text-box" ng-if="access == false">
+        <p class="text-left">Você está tentando acessar uma área restrita. Caso tenha recebido o convite corretamente, verifique se o link do seu navegador é idêntico ao do informado por e-mail.<p>
+        <p class="text-left">Se o problema persistir, entre em contato com o departamento de Recursos Humanos da sua empresa.</p>
+    </div>
+
+</md-card-content>

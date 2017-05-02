@@ -1,0 +1,42 @@
+<md-card-header class="mp-header-modulo">
+    <md-card-header-text>
+        <span class="md-title">Câncer de próstata</span>
+    </md-card-header-text>
+</md-card-header>
+
+<md-card-content class="mp-graphic-box md-margin">
+    <svg class="mp-graphic-modulo" fill="{{prostate.color}}"  viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+        <path d="M0 0h24v24H0z" fill="none"/>
+    </svg>
+    <h4 style="color: {{prostate.color}}!important">{{prostate.string}}</h4>
+</md-card-content>
+
+
+<md-card-content class="mp-box-text">
+    <div class="mp-text-box">
+        <p class="text-center">Levando em consideração os parâmetros fornecidos, conseguimos avaliar se você faz ou não parte do grupo de risco de desenvolver câncer de próstata.</p>
+    </div>
+</md-card-content>
+
+<md-card-content class="middle-card">
+    <div class="graph prostate-cancer">
+        <ul class="grid">
+            <li ng-class="prostate.score == false ? 'active':''"></li>
+            <li ng-class="prostate.score == true ? 'active':''"></li>
+        </ul>
+    </div>
+</md-card-content>
+
+<md-button
+    ng-if="prostate.orientation.length > 0"
+    class="md-raised md-primary bt-risco-detalhes">
+    Sugestões
+</md-button>
+
+<md-card-content  class="mp-detalhe-box md-margin" ng-if="prostate.orientation.length > 0">
+    <h4 style="color: {{prostate.color}}!important">{{prostate.string}}</h4>
+    <div class="mp-text-box">
+        <p class="text-left" ng-repeat="text in prostate.orientation track by $index">{{text}}</p>
+    </div>
+</md-card-content>

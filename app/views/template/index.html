@@ -1,0 +1,83 @@
+<section id="login" class="device" jquery-events>
+    <!-- Header -->
+    <header
+        class="header"
+        ng-include="'./views/template/partials/header.html'">
+    </header>
+
+    <!-- Sidebar Left  -->
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="sidebarleft">
+
+        <md-toolbar class="md-theme-indigo">
+            <h1 class="md-toolbar-tools">Sidenav Left</h1>
+        </md-toolbar>
+
+        <md-content layout-padding>
+            <md-button ng-click="close('sidebarleft')" class="md-primary">
+                Close Sidenav Left
+            </md-button>
+            <p hide show-gt-md>
+            This sidenav is locked open on your device. To go back to the default behavior,
+            narrow your display.
+            </p>
+        </md-content>
+    </md-sidenav>
+
+
+    <div layout="column" layout-align="top center">
+
+      <div>
+        <md-button ng-click="toggleLeft()"
+          class="md-primary">
+          Toggle left
+        </md-button>
+      </div>
+
+      <div>
+        <md-button ng-click="toggleRight()"
+          class="md-primary">
+          Toggle right
+        </md-button>
+      </div>
+    </div>
+
+    <!-- Loading-->
+    <content
+        ng-if="load == 'loading'" class="content"
+        ng-include="'./views/pages/user/partials/load-content.html'">
+    </content>
+
+    <!-- Home -->
+    <content
+        ng-if="load == 'loaded' && content == 'home'" class="content"
+        ng-include="'./views/pages/landpage/pages/home.html'">
+    </content>
+
+    <!-- 404 -->
+    <content
+        ng-if="load == 'loaded' && content == '404'" class="content"
+        ng-include="'./views/pages/landpage/pages/404.html'">
+    </content>
+
+    <!-- Sidebar Right  -->
+    <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="sidebarright">
+        <md-toolbar class="md-theme-light">
+            <h1 class="md-toolbar-tools">Sidenav Right</h1>
+        </md-toolbar>
+        <md-content layout-padding>
+            <form>
+                <md-input-container>
+                    <label for="testInput">Test input</label>
+                    <input type="text" id="testInput"
+                    ng-model="data" md-autofocus>
+                </md-input-container>
+            </form>
+            <md-button ng-click="close('sidebarright')" class="md-primary">
+                Close Sidenav Right
+            </md-button>
+        </md-content>
+    </md-sidenav>
+
+</section>

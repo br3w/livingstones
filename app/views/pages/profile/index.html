@@ -1,0 +1,28 @@
+<section id="profile" class="device" jquery-events>
+    <!-- Header -->
+    <header
+        class="header"
+        ng-include="'./htmls/views/login/partials/header.html'">
+    </header>
+
+    <content class="content">
+        <md-card class="md-margin-welcome" flex-gt-xs="100" layout="column">
+
+            <md-card-header class="mp-header-welcome">
+                <md-card-header-text>
+                    <span class="md-title">{{title}}</span>
+                </md-card-header-text>
+            </md-card-header>
+
+            <!-- First Access-->
+            <md-card-content
+                class="mp-box-text"
+                ng-if="view == 'profile'" class="content"
+                ng-include="'./htmls/views/profile/pages/profile.html'"
+            </md-card-content>
+
+        </md-card>
+    </content>
+
+</section>
+<p>Copyrigth 2016 MedPass</p>

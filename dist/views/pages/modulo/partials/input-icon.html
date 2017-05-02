@@ -1,0 +1,37 @@
+<!-- Title and Description  -->
+<h2 class="title align-center" ng-if="quest.title !=''">{{quest.title}}</h2>
+<p class="text align-center" ng-if="quest.description !=''">{{quest.description}}</p>
+
+<!-- Form questions -->
+<form class="center-quest" id="icon" name="icon" ng-submit="submitInputIcon(icon.$valid)">
+
+    <!-- Component -->
+    <md-icon-group ng-model="data.input">
+        <div class="row image-input-icon" layout-padding layout-align="center center" jquery-events>
+            <div class="input-icon" ng-repeat="option in quest.options track by $index"
+                id="{{quest.id}}{{$index}}"
+                name="{{quest.id}}"
+                type="icon"
+                value="{{option.value}}||{{option.next}}"
+                ng-click="validationSend(); setInputIcon(option.value, option.next)">
+                    <div class="mp-image" style="background-image: url(images/icons/{{option.image}})"></div>
+                    <label for="{{quest.id}}{{$index}}">{{option.title}}</label>
+            </div>
+        </div>
+    </md-icon-group>
+
+    <!-- Button Send -->
+    <md-button
+        class="md-raised md-primary bt-modulo"
+        type="submit"
+        name="button"
+        ng-class="!send ? 'disable':'sign'"
+        ng-disabled="!send">Próximo
+    </md-button>
+
+    <!-- Button Back -->
+    <button  ng-if="idmodulo > 0" ng-click="sendBackPage()" class="bt-back" type="button" name="button"><i class="icon-seta"></i>Voltar</button>
+
+</form>
+
+<hr class="bar-quest">

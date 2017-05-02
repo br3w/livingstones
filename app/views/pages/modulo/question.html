@@ -1,0 +1,28 @@
+<section id="modulo" ng-controller="userModuloCtrl as usermodulo">
+
+    <header class="header">
+        <div class="center">
+            <img class="logo-header-modal" src="images/logo.png" alt="Medpass - Todos os direitos reservados">
+        </div>
+    </header>
+
+    <div class="progress"><div class="complete"  style="width:{{progressBar}}%"></div></div>
+
+    <div class="center content-modulo">
+        <div ng-if="quest.type == 'info'    &&     quest.input == 'html'"       ng-include="'./htmls/views/modulo/partials/input-info.html'"></div>
+        <div ng-if="quest.type == 'list'    &&     quest.input == 'radio'"      ng-include="'./htmls/views/modulo/partials/input-radio.html'"></div>
+        <div ng-if="quest.type == 'list'    &&     quest.input == 'check'"      ng-include="'./htmls/views/modulo/partials/input-check.html'"></div>
+        <div ng-if="quest.type == 'list'    &&     quest.input == 'icon'"       ng-include="'./htmls/views/modulo/partials/input-icon.html'"></div>
+        <div ng-if="quest.type == 'range'   &&     quest.input == 'selectlist'" ng-include="'./htmls/views/modulo/partials/input-selectlist.html'"></div>
+        <div ng-if="quest.type == 'range'   &&     quest.input == 'slider'"     ng-include="'./htmls/views/modulo/partials/input-slider.html'"></div>
+
+        <div class="helper-box">
+            <img class="helper-img" src="images/bentivi.png" width="110" alt="Helper - Ajuda ao usuário" />
+            <div class="helper-text">
+                <h4>{{quest.helper.title}}</h4><br>
+                <p ng-repeat="helps in quest.helper.description" ng-bind-html="getHtml(helps.text)"></p>
+            </div>
+        </div>
+    </div>
+
+</section>

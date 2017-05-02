@@ -1,0 +1,44 @@
+<md-card-header class="mp-header-modulo">
+    <md-card-header-text>
+        <span class="md-title">Qualidade do sono</span>
+    </md-card-header-text>
+</md-card-header>
+
+<md-card-content class="mp-graphic-box md-margin">
+
+    <svg class="mp-graphic-modulo" fill="{{prostate.color}}" height="60" viewBox="0 0 24 24" width="60" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0h24v24H0z" fill="none"/>
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+    </svg>
+
+    <h4 style="color: {{prostate.color}}!important">{{prostate.string}}</h4>
+</md-card-content>
+
+
+<md-card-content class="mp-box-text md-margin">
+    <div class="mp-text-box">
+        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+</md-card-content>
+
+<md-card-content class="middle-card">
+    <div class="graph prostate-cancer">
+        <ul class="grid">
+            <li ng-class="prostate.score == false ? 'active':''"></li>
+            <li ng-class="prostate.score == true ? 'active':''"></li>
+        </ul>
+    </div>
+</md-card-content>
+
+<md-button
+    ng-if="prostate.orientation.length > 0"
+    class="md-raised md-primary bt-risco-detalhes">
+    Sugestões
+</md-button>
+
+<md-card-content  class="mp-detalhe-box md-margin" ng-if="prostate.orientation.length > 0">
+    <h4 style="color: {{prostate.color}}!important">{{prostate.string}}</h4>
+    <div class="mp-text-box">
+        <p class="text-left" ng-repeat="text in prostate.orientation track by $index">{{text}}</p>
+    </div>
+</md-card-content>

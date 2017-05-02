@@ -1,0 +1,34 @@
+<md-card-header class="mp-header-princial">
+    <md-card-header-text>
+        <span class="md-title">Status MedPass</span>
+    </md-card-header-text>
+</md-card-header>
+
+
+<div class="mp-box-text md-margin-2" layout-xs="column" layout="row">
+    <div class="mp-text-box" flex-xs="100" flex="70"  flex-order-xs="2">
+        <h3 class="title-left">{{geral.stringrisk}}</h3>
+        <p class="text-left">
+            O que é o Status MedPass?<br>
+            O Status MedPass é uma avaliação global da sua saúde, levando em consideração seus comportamentos e hábitos, seu histórico pessoal e familiar e informações médicas. Você encontrará aqui sugestões personalizadas de como cuidar melhor da sua saúde, melhorando seu bem estar e seu Status MedPass.
+        </p>
+        <p class="text-left">
+            Quando você começar a seguir nossas recomendações, será apenas uma questão de tempo e esforço para ver a diferença positiva que essas ações terão na qualidade de vida, fazendo com que você viva mais e melhor.
+        </p>
+        <md-button
+            class="md-raised md-primary bt-risco-total"
+            type="submit"
+            ng-href="./#!/user/medico">
+            Compartilhar com Médico
+        </md-button>
+    </div>
+
+    <div class="mp-box-text"  flex-xs="100" flex-xs="100" flex="30" layout="row" layout-align="center center"  flex-order-xs="1">
+        <img ng-if="geral.numrisk == 1" class="mp-graphic-total" src="svg/graphic_1.svg"/>
+        <img ng-if="geral.numrisk == 2" class="mp-graphic-total" src="svg/graphic_2.svg"/>
+        <img ng-if="geral.numrisk == 3" class="mp-graphic-total" src="svg/graphic_3.svg"/>
+        <img ng-if="geral.numrisk == 4" class="mp-graphic-total" src="svg/graphic_4.svg"/>
+        <img ng-if="geral.numrisk == 5" class="mp-graphic-total" src="svg/graphic_5.svg"/>
+        <img ng-if="geral.numrisk == 6" class="mp-graphic-total" src="svg/graphic_6.svg"/>
+    </div>
+</div>

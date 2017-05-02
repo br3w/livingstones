@@ -1,0 +1,48 @@
+<!-- Title and Description  -->
+<h2 class="title align-center" ng-if="quest.title !=''">{{quest.title}}</h2>
+<p class="text align-center" ng-if="quest.description !=''">{{quest.description}}</p>
+
+<!-- Form questions -->
+<form id="slider" class="center-quest large premed-form" ng-submit="submitSlider(this)">
+
+    <!-- Component -->
+    <fieldset class="input-slider">
+
+        <input
+            id="slider"
+            name="slider"
+            type="range"
+            value="{{quest.range[1]}}"
+            min="{{quest.range[0]}}"
+            max="{{quest.range[quest.range.length -1]}}"
+            step="1"
+            list="volsettings"
+            ng-model="data.input"
+            ng-change="validationSend()"
+            />
+
+        <ul class="indice">
+            <li style="width:{{(100/quest.range.length)}}%" ng-repeat="range in quest.range track by $index">{{range}}</li>
+        </ul>
+
+        <datalist>
+            <option ng-repeat="range in quest.range track by $index">{{range}}</option>
+        </datalist>
+
+        <!-- Button Send -->
+        <md-button
+            class="md-raised md-primary bt-modulo"
+            type="submit"
+            name="button"
+            ng-class="!send ? 'disable':'sign'"
+            ng-disabled="!send">Próximo
+        </md-button>
+
+    </fieldset>
+
+    <!-- Button Back -->
+    <button ng-if="idmodulo > 0" ng-click="sendBackPage()" class="bt-back" type="button" name="button"><i class="icon-seta"></i>Voltar</button>
+
+</form>
+
+<hr class="bar-quest">
