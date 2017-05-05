@@ -139,7 +139,6 @@ input:-webkit-autofill {
 }
 
 .md-shadow-animated.md-shadow {
-  -webkit-transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -155,7 +154,6 @@ input:-webkit-autofill {
   top: 0;
   width: 100%;
   height: 100%;
-  -webkit-transition: all 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -169,7 +167,6 @@ input:-webkit-autofill {
   border-radius: 50%;
 }
 .md-ripple.md-ripple-placed {
-  -webkit-transition: margin 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), border 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), height 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: margin 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), border 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), height 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: margin 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), border 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), height 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: margin 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), border 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), width 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), height 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), opacity 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.9s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.9s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -350,7 +347,7 @@ select,
 html,
 textarea,
 input {
-  font-family: "Roboto-Light", Arial;
+  font-family: "Roboto-Regular", Arial;
 }
 
 select,
@@ -396,7 +393,6 @@ input {
 
 ._md-panel-shown .md-panel {
   opacity: 1;
-  -webkit-transition: none;
   transition: none;
 }
 
@@ -406,17 +402,14 @@ input {
 }
 .md-panel._md-panel-shown {
   opacity: 1;
-  -webkit-transition: none;
   transition: none;
 }
 .md-panel._md-panel-animate-enter {
   opacity: 1;
-  -webkit-transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
   transition: all 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 .md-panel._md-panel-animate-leave {
   opacity: 1;
-  -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 1, 1);
   transition: all 0.3s cubic-bezier(0.4, 0, 1, 1);
 }
 .md-panel._md-panel-animate-scale-out, .md-panel._md-panel-animate-fade-out {
@@ -429,11 +422,9 @@ input {
 }
 .md-panel._md-opaque-enter {
   opacity: .48;
-  -webkit-transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
   transition: opacity 0.3s cubic-bezier(0, 0, 0.2, 1);
 }
 .md-panel._md-opaque-leave {
-  -webkit-transition: opacity 0.3s cubic-bezier(0.4, 0, 1, 1);
   transition: opacity 0.3s cubic-bezier(0.4, 0, 1, 1);
 }
 
@@ -514,23 +505,19 @@ md-autocomplete md-autocomplete-wrap md-progress-linear .md-mode-indeterminate {
   left: 0;
   width: 100%;
   height: 3px;
-  -webkit-transition: none;
   transition: none;
 }
 md-autocomplete md-autocomplete-wrap md-progress-linear .md-mode-indeterminate .md-container {
-  -webkit-transition: none;
   transition: none;
   height: 3px;
 }
 md-autocomplete md-autocomplete-wrap md-progress-linear .md-mode-indeterminate.ng-enter {
-  -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
 }
 md-autocomplete md-autocomplete-wrap md-progress-linear .md-mode-indeterminate.ng-enter.ng-enter-active {
   opacity: 1;
 }
 md-autocomplete md-autocomplete-wrap md-progress-linear .md-mode-indeterminate.ng-leave {
-  -webkit-transition: opacity 0.15s linear;
   transition: opacity 0.15s linear;
 }
 md-autocomplete md-autocomplete-wrap md-progress-linear .md-mode-indeterminate.ng-leave.ng-leave-active {
@@ -576,7 +563,6 @@ md-autocomplete .md-show-clear-button button:after {
   -webkit-transform: scale(0);
           transform: scale(0);
   opacity: 0;
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 md-autocomplete .md-show-clear-button button:focus {
@@ -600,7 +586,6 @@ md-autocomplete .md-show-clear-button button md-icon path {
 md-autocomplete .md-show-clear-button button.ng-enter {
   -webkit-transform: scale(0);
           transform: scale(0);
-  -webkit-transition: -webkit-transform 0.15s ease-out;
   transition: -webkit-transform 0.15s ease-out;
   transition: transform 0.15s ease-out;
   transition: transform 0.15s ease-out, -webkit-transform 0.15s ease-out;
@@ -610,7 +595,6 @@ md-autocomplete .md-show-clear-button button.ng-enter.ng-enter-active {
           transform: scale(1);
 }
 md-autocomplete .md-show-clear-button button.ng-leave {
-  -webkit-transition: -webkit-transform 0.15s ease-out;
   transition: -webkit-transform 0.15s ease-out;
   transition: transform 0.15s ease-out;
   transition: transform 0.15s ease-out, -webkit-transform 0.15s ease-out;
@@ -650,7 +634,6 @@ md-autocomplete .md-show-clear-button button.ng-leave.ng-leave-active {
   padding: 0 15px;
   line-height: 48px;
   height: 48px;
-  -webkit-transition: background 0.15s linear;
   transition: background 0.15s linear;
   margin: 0;
   white-space: nowrap;
@@ -710,7 +693,6 @@ button.md-button::-moz-focus-inner {
   font-family: inherit;
   text-decoration: none;
   overflow: hidden;
-  -webkit-transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .md-dense > .md-button:not(.md-dense-disabled), .md-dense :not(.md-dense-disabled) .md-button:not(.md-dense-disabled) {
@@ -729,7 +711,6 @@ button.md-button::-moz-focus-inner {
   text-decoration: none;
 }
 .md-button.ng-hide, .md-button.ng-leave {
-  -webkit-transition: none;
   transition: none;
 }
 .md-button.md-cornered {
@@ -768,9 +749,7 @@ button.md-button::-moz-focus-inner {
   border-radius: 50%;
   background-clip: padding-box;
   overflow: hidden;
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
-  -webkit-transition-property: background-color, box-shadow, -webkit-transform;
   transition-property: background-color, box-shadow, -webkit-transform;
   transition-property: background-color, box-shadow, transform;
   transition-property: background-color, box-shadow, transform, -webkit-transform;
@@ -815,7 +794,6 @@ button.md-button::-moz-focus-inner {
   height: 40px;
 }
 .md-button.md-fab.ng-hide, .md-button.md-fab.ng-leave {
-  -webkit-transition: none;
   transition: none;
 }
 .md-button:not([disabled]).md-raised.md-focused, .md-button:not([disabled]).md-fab.md-focused {
@@ -838,7 +816,6 @@ button.md-button.md-fab md-icon {
 
 .md-toast-open-top .md-button.md-fab-top-left,
 .md-toast-open-top .md-button.md-fab-top-right {
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   -webkit-transform: translate3d(0, 42px, 0);
           transform: translate3d(0, 42px, 0);
@@ -852,7 +829,6 @@ button.md-button.md-fab md-icon {
 
 .md-toast-open-bottom .md-button.md-fab-bottom-left,
 .md-toast-open-bottom .md-button.md-fab-bottom-right {
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   -webkit-transform: translate3d(0, -42px, 0);
           transform: translate3d(0, -42px, 0);
@@ -911,9 +887,7 @@ md-bottom-sheet {
   border-top-style: solid;
   -webkit-transform: translate3d(0, 80px, 0);
           transform: translate3d(0, 80px, 0);
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  -webkit-transition-property: -webkit-transform;
   transition-property: -webkit-transform;
   transition-property: transform;
   transition-property: transform, -webkit-transform;
@@ -935,12 +909,11 @@ md-bottom-sheet.ng-enter-active {
 md-bottom-sheet.ng-leave-active {
   -webkit-transform: translate3d(0, 100%, 0) !important;
           transform: translate3d(0, 100%, 0) !important;
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
 }
 md-bottom-sheet .md-subheader {
   background-color: transparent;
-  font-family: "Roboto-Light", Arial;
+  font-family: "Roboto-Regular", Arial;
   line-height: 56px;
   padding: 0;
   white-space: nowrap;
@@ -982,7 +955,6 @@ md-bottom-sheet.md-grid md-list {
           flex-direction: row;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -996,7 +968,6 @@ md-bottom-sheet.md-grid md-list-item {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   height: 96px;
   margin-top: 8px;
@@ -1094,7 +1065,6 @@ md-bottom-sheet.md-grid md-list-item .md-grid-text {
   }
 }
 md-backdrop {
-  -webkit-transition: opacity 450ms;
   transition: opacity 450ms;
   position: absolute;
   top: 0;
@@ -1109,8 +1079,7 @@ md-backdrop.md-menu-backdrop {
 }
 md-backdrop.md-select-backdrop {
   z-index: 81;
-  -webkit-transition-duration: 0;
-          transition-duration: 0;
+  transition-duration: 0;
 }
 md-backdrop.md-dialog-backdrop {
   z-index: 79;
@@ -1135,7 +1104,6 @@ md-backdrop.md-opaque.ng-enter.md-opaque.ng-enter-active {
 }
 md-backdrop.md-opaque.ng-leave {
   opacity: .48;
-  -webkit-transition: opacity 400ms;
   transition: opacity 400ms;
 }
 md-backdrop.md-opaque.ng-leave.md-opaque.ng-leave-active {
@@ -1459,7 +1427,6 @@ md-checkbox .md-container:before {
   top: 0;
   right: 0;
   bottom: 0;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   width: auto;
 }
@@ -1484,7 +1451,6 @@ md-checkbox .md-container .md-ripple-container {
 }
 md-checkbox .md-icon {
   box-sizing: border-box;
-  -webkit-transition: 240ms;
   transition: 240ms;
   position: absolute;
   top: 0;
@@ -1627,7 +1593,7 @@ md-content[md-scroll-x] {
 
 .md-chips {
   display: block;
-  font-family: "Roboto-Light", Arial;
+  font-family: "Roboto-Regular", Arial;
   font-size: 16px;
   padding: 0 0 8px 3px;
   vertical-align: middle;
@@ -1848,14 +1814,12 @@ md-dialog {
 }
 md-dialog.md-transition-in {
   opacity: 1;
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   -webkit-transform: translate(0, 0) scale(1);
           transform: translate(0, 0) scale(1);
 }
 md-dialog.md-transition-out {
   opacity: 0;
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   -webkit-transform: translate(0, 100%) scale(0.2);
           transform: translate(0, 100%) scale(0.2);
@@ -2039,7 +2003,6 @@ md-calendar {
 }
 
 .md-calendar-date-selection-indicator {
-  -webkit-transition: background-color, color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: background-color, color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   border-radius: 50%;
   display: inline-block;
@@ -2247,7 +2210,6 @@ md-datepicker {
           transform: scale(0);
   -webkit-transform-origin: 0 0;
           transform-origin: 0 0;
-  -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: -webkit-transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -2269,7 +2231,6 @@ md-datepicker {
 
 .md-datepicker-calendar {
   opacity: 0;
-  -webkit-transition: opacity 0.2s cubic-bezier(0.5, 0, 0.25, 1);
   transition: opacity 0.2s cubic-bezier(0.5, 0, 0.25, 1);
 }
 .md-pane-open .md-datepicker-calendar {
@@ -2340,12 +2301,10 @@ md-datepicker[disabled] .md-datepicker-triangle-button {
 .md-datepicker-calendar-pane .md-calendar {
   -webkit-transform: translateY(-85px);
           transform: translateY(-85px);
-  -webkit-transition: -webkit-transform 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: -webkit-transform 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: transform 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: transform 0.65s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.65s cubic-bezier(0.25, 0.8, 0.25, 1);
-  -webkit-transition-delay: 0.125s;
-          transition-delay: 0.125s;
+  transition-delay: 0.125s;
 }
 .md-datepicker-calendar-pane.md-pane-open .md-calendar {
   -webkit-transform: translateY(0);
@@ -2407,14 +2366,12 @@ md-fab-toolbar md-fab-trigger .md-fab-toolbar-background {
   position: absolute;
   z-index: 21;
   opacity: 1;
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
 }
 md-fab-toolbar md-fab-trigger md-icon {
   position: relative;
   z-index: 22;
   opacity: 1;
-  -webkit-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
 }
 md-fab-toolbar.md-left md-fab-trigger {
@@ -2477,10 +2434,8 @@ md-fab-toolbar md-toolbar .md-fab-action-item {
   opacity: 0;
   -webkit-transform: scale(0);
           transform: scale(0);
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
-  -webkit-transition-duration: 0.15s;
-          transition-duration: 0.15s;
+  transition-duration: 0.15s;
 }
 md-fab-toolbar.md-is-open md-fab-trigger > button {
   box-shadow: none;
@@ -2562,7 +2517,6 @@ md-fab-speed-dial md-fab-actions {
   height: auto;
 }
 md-fab-speed-dial md-fab-actions .md-fab-action-item {
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
 }
 md-fab-speed-dial.md-down {
@@ -2626,7 +2580,6 @@ md-fab-speed-dial.md-left md-fab-actions {
           order: 1;
 }
 md-fab-speed-dial.md-left md-fab-actions .md-fab-action-item {
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
 }
 md-fab-speed-dial.md-right {
@@ -2650,7 +2603,6 @@ md-fab-speed-dial.md-right md-fab-actions {
           order: 2;
 }
 md-fab-speed-dial.md-right md-fab-actions .md-fab-action-item {
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
 }
 md-fab-speed-dial.md-fling-remove .md-fab-action-item > *, md-fab-speed-dial.md-scale-remove .md-fab-action-item > * {
@@ -2661,16 +2613,13 @@ md-fab-speed-dial.md-fling .md-fab-action-item {
 }
 md-fab-speed-dial.md-fling.md-animations-waiting .md-fab-action-item {
   opacity: 0;
-  -webkit-transition-duration: 0s;
-          transition-duration: 0s;
+  transition-duration: 0s;
 }
 md-fab-speed-dial.md-scale .md-fab-action-item {
   -webkit-transform: scale(0);
           transform: scale(0);
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
-  -webkit-transition-duration: 0.14286s;
-          transition-duration: 0.14286s;
+  transition-duration: 0.14286s;
 }
 
 md-grid-list {
@@ -2887,7 +2836,6 @@ md-input-container .md-placeholder {
   z-index: 1;
   -webkit-transform: translate3d(0, 28px, 0) scale(1);
           transform: translate3d(0, 28px, 0) scale(1);
-  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -2912,7 +2860,6 @@ md-input-container .md-placeholder {
   position: absolute;
   top: 0;
   opacity: 0;
-  -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
   transition-property: opacity, transform;
   transition-property: opacity, transform, -webkit-transform;
@@ -2925,7 +2872,6 @@ md-input-container.md-input-focused .md-placeholder {
           transform: translate3d(0, 24px, 0);
 }
 md-input-container.md-input-has-value .md-placeholder {
-  -webkit-transition: none;
   transition: none;
   opacity: 0;
 }
@@ -3001,7 +2947,6 @@ md-input-container .md-input-message-animation, md-input-container .md-char-coun
   font-size: 12px;
   line-height: 14px;
   overflow: hidden;
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   opacity: 1;
   margin-top: 0;
@@ -3032,13 +2977,11 @@ md-input-container .md-input-message-animation.ng-enter {
 md-input-container.md-input-focused label:not(.md-no-float), md-input-container.md-input-has-placeholder label:not(.md-no-float), md-input-container.md-input-has-value label:not(.md-no-float) {
   -webkit-transform: translate3d(0, 6px, 0) scale(0.75);
           transform: translate3d(0, 6px, 0) scale(0.75);
-  -webkit-transition: width cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s, -webkit-transform cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s;
   transition: width cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s, -webkit-transform cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s;
   transition: transform cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s, width cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s;
   transition: transform cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s, width cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s, -webkit-transform cubic-bezier(0.25, 0.8, 0.25, 1) 0.4s;
 }
 md-input-container.md-input-has-value label {
-  -webkit-transition: none;
   transition: none;
 }
 md-input-container.md-input-focused .md-input,
@@ -3052,7 +2995,6 @@ md-input-container .md-input[disabled], [disabled] md-input-container .md-input 
   background-repeat: repeat-x;
 }
 md-input-container.md-icon-float {
-  -webkit-transition: margin-top 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: margin-top 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 md-input-container.md-icon-float > label {
@@ -3256,7 +3198,6 @@ md-list-item {
   position: relative;
 }
 md-list-item.md-proxy-focus.md-focused .md-no-style {
-  -webkit-transition: background-color 0.15s linear;
   transition: background-color 0.15s linear;
 }
 md-list-item._md-button-wrap {
@@ -3761,26 +3702,19 @@ md-menu-content.md-menu-bar-menu.md-dense .md-menu > .md-button:after {
 }
 .md-open-menu-container.md-active {
   opacity: 1;
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
+  transition-duration: 200ms;
 }
 .md-open-menu-container.md-active > md-menu-content > * {
   opacity: 1;
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
-  -webkit-transition-duration: 200ms;
-          transition-duration: 200ms;
-  -webkit-transition-delay: 100ms;
-          transition-delay: 100ms;
+  transition-duration: 200ms;
+  transition-delay: 100ms;
 }
 .md-open-menu-container.md-leave {
   opacity: 0;
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
-  -webkit-transition-duration: 250ms;
-          transition-duration: 250ms;
+  transition-duration: 250ms;
 }
 
 md-menu-content {
@@ -3958,7 +3892,6 @@ md-toolbar .md-menu {
   line-height: 24px;
   margin: 0 4px;
   padding: 12px 16px;
-  -webkit-transition: background-color 0.35s cubic-bezier(0.35, 0, 0.25, 1);
   transition: background-color 0.35s cubic-bezier(0.35, 0, 0.25, 1);
 }
 .md-button._md-nav-button:focus {
@@ -3977,15 +3910,12 @@ md-nav-ink-bar {
   background-color: black;
 }
 md-nav-ink-bar._md-left {
-  -webkit-transition: left 0.125s cubic-bezier(0.35, 0, 0.25, 1), right 0.25s cubic-bezier(0.35, 0, 0.25, 1);
   transition: left 0.125s cubic-bezier(0.35, 0, 0.25, 1), right 0.25s cubic-bezier(0.35, 0, 0.25, 1);
 }
 md-nav-ink-bar._md-right {
-  -webkit-transition: left 0.25s cubic-bezier(0.35, 0, 0.25, 1), right 0.125s cubic-bezier(0.35, 0, 0.25, 1);
   transition: left 0.25s cubic-bezier(0.35, 0, 0.25, 1), right 0.125s cubic-bezier(0.35, 0, 0.25, 1);
 }
 md-nav-ink-bar.ng-animate {
-  -webkit-transition: none;
   transition: none;
 }
 
@@ -4073,7 +4003,6 @@ md-progress-linear .md-container .md-dashed:before {
   background-position: 0px -23px;
 }
 md-progress-linear .md-container .md-bar1, md-progress-linear .md-container .md-bar2 {
-  -webkit-transition: -webkit-transform 0.2s linear;
   transition: -webkit-transform 0.2s linear;
   transition: transform 0.2s linear;
   transition: transform 0.2s linear, -webkit-transform 0.2s linear;
@@ -4082,7 +4011,6 @@ md-progress-linear .md-container.md-mode-query .md-bar1 {
   display: none;
 }
 md-progress-linear .md-container.md-mode-query .md-bar2 {
-  -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
   -webkit-animation: query 0.8s infinite cubic-bezier(0.39, 0.575, 0.565, 1);
           animation: query 0.8s infinite cubic-bezier(0.39, 0.575, 0.565, 1);
@@ -4115,7 +4043,6 @@ md-progress-linear .md-container.ng-hide
 }
 md-progress-linear .md-container.md-mode-buffer {
   background-color: transparent !important;
-  -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
 }
 md-progress-linear .md-container.md-mode-buffer .md-dashed:before {
@@ -4352,7 +4279,6 @@ md-progress-linear .md-container.md-mode-buffer .md-dashed:before {
   }
 }
 md-input-container:not([md-no-float]) .md-select-placeholder span:first-child {
-  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), -webkit-transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -4390,26 +4316,19 @@ md-input-container.md-input-focused:not([md-no-float]) .md-select-placeholder sp
   opacity: 1;
 }
 .md-select-menu-container.md-active md-select-menu {
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  -webkit-transition-duration: 150ms;
-          transition-duration: 150ms;
+  transition-duration: 150ms;
 }
 .md-select-menu-container.md-active md-select-menu > * {
   opacity: 1;
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
-  -webkit-transition-duration: 150ms;
-          transition-duration: 150ms;
-  -webkit-transition-delay: 100ms;
-          transition-delay: 100ms;
+  transition-duration: 150ms;
+  transition-delay: 100ms;
 }
 .md-select-menu-container.md-leave {
   opacity: 0;
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
-  -webkit-transition-duration: 250ms;
-          transition-duration: 250ms;
+  transition-duration: 250ms;
 }
 
 md-input-container > md-select {
@@ -4591,7 +4510,6 @@ md-option {
       -ms-flex-align: center;
           align-items: center;
   width: auto;
-  -webkit-transition: background 0.15s linear;
   transition: background 0.15s linear;
   padding: 0 16px 0 16px;
   height: 48px;
@@ -4678,7 +4596,6 @@ md-select-menu[multiple] md-option.md-checkbox-enabled .md-container:before {
   top: 0;
   right: 0;
   bottom: 0;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   width: auto;
 }
@@ -4703,7 +4620,6 @@ md-select-menu[multiple] md-option.md-checkbox-enabled .md-container .md-ripple-
 }
 md-select-menu[multiple] md-option.md-checkbox-enabled .md-icon {
   box-sizing: border-box;
-  -webkit-transition: 240ms;
   transition: 240ms;
   position: absolute;
   top: 0;
@@ -4787,11 +4703,9 @@ md-sidenav.md-closed-add, md-sidenav.md-closed-remove {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: 0.2s ease-in all;
   transition: 0.2s ease-in all;
 }
 md-sidenav.md-closed-add.md-closed-add-active, md-sidenav.md-closed-remove.md-closed-remove-active {
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 md-sidenav.md-locked-open-add, md-sidenav.md-locked-open-remove {
@@ -4827,17 +4741,14 @@ md-sidenav.md-closed.md-locked-open-add {
           transform: translate3d(0%, 0, 0);
 }
 md-sidenav.md-closed.md-locked-open-add:not(.md-locked-open-add-active) {
-  -webkit-transition: width 0.3s cubic-bezier(0.55, 0, 0.55, 0.2), min-width 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: width 0.3s cubic-bezier(0.55, 0, 0.55, 0.2), min-width 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   width: 0 !important;
   min-width: 0 !important;
 }
 md-sidenav.md-closed.md-locked-open-add-active {
-  -webkit-transition: width 0.3s cubic-bezier(0.55, 0, 0.55, 0.2), min-width 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: width 0.3s cubic-bezier(0.55, 0, 0.55, 0.2), min-width 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
 }
 md-sidenav.md-locked-open-remove-active {
-  -webkit-transition: width 0.3s cubic-bezier(0.55, 0, 0.55, 0.2), min-width 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: width 0.3s cubic-bezier(0.55, 0, 0.55, 0.2), min-width 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   width: 0 !important;
   min-width: 0 !important;
@@ -4944,7 +4855,6 @@ md-radio-button .md-container:before {
   top: 0;
   right: 0;
   bottom: 0;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   width: auto;
 }
@@ -4961,7 +4871,6 @@ md-radio-button .md-off {
   border-style: solid;
   border-width: 2px;
   border-radius: 50%;
-  -webkit-transition: border-color ease 0.28s;
   transition: border-color ease 0.28s;
 }
 md-radio-button .md-on {
@@ -4972,7 +4881,6 @@ md-radio-button .md-on {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  -webkit-transition: -webkit-transform ease 0.28s;
   transition: -webkit-transform ease 0.28s;
   transition: transform ease 0.28s;
   transition: transform ease 0.28s, -webkit-transform ease 0.28s;
@@ -5192,9 +5100,7 @@ md-slider .md-track {
   height: 100%;
 }
 md-slider .md-track-fill {
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  -webkit-transition-property: width, height;
   transition-property: width, height;
 }
 md-slider .md-track-ticks {
@@ -5213,9 +5119,7 @@ md-slider .md-thumb-container {
   top: 50%;
   -webkit-transform: translate3d(-50%, -50%, 0);
           transform: translate3d(-50%, -50%, 0);
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  -webkit-transition-property: left, right, bottom;
   transition-property: left, right, bottom;
 }
 [dir=rtl] md-slider .md-thumb-container {
@@ -5232,7 +5136,6 @@ md-slider .md-thumb {
   border-radius: 20px;
   -webkit-transform: scale(0.7);
           transform: scale(0.7);
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 [dir=rtl] md-slider .md-thumb {
@@ -5247,7 +5150,6 @@ md-slider .md-thumb:after {
   border-radius: 20px;
   border-width: 3px;
   border-style: solid;
-  -webkit-transition: inherit;
   transition: inherit;
 }
 md-slider .md-sign {
@@ -5269,7 +5171,6 @@ md-slider .md-sign {
   border-radius: 28px;
   -webkit-transform: scale(0.4) translate3d(0, 67.5px, 0);
           transform: scale(0.4) translate3d(0, 67.5px, 0);
-  -webkit-transition: all 0.3s cubic-bezier(0.35, 0, 0.25, 1);
   transition: all 0.3s cubic-bezier(0.35, 0, 0.25, 1);
   /* The arrow pointing down under the sign */
 }
@@ -5286,7 +5187,6 @@ md-slider .md-sign:after {
   opacity: 0;
   -webkit-transform: translate3d(0, -8px, 0);
           transform: translate3d(0, -8px, 0);
-  -webkit-transition: all 0.2s cubic-bezier(0.35, 0, 0.25, 1);
   transition: all 0.2s cubic-bezier(0.35, 0, 0.25, 1);
 }
 [dir=rtl] md-slider .md-sign:after {
@@ -5308,7 +5208,6 @@ md-slider .md-focus-ring {
   -webkit-transform: scale(0.7);
           transform: scale(0.7);
   opacity: 0;
-  -webkit-transition: all 0.35s cubic-bezier(0.35, 0, 0.25, 1);
   transition: all 0.35s cubic-bezier(0.35, 0, 0.25, 1);
 }
 [dir=rtl] md-slider .md-focus-ring {
@@ -5340,7 +5239,6 @@ md-slider:focus {
 }
 md-slider.md-dragging .md-thumb-container,
 md-slider.md-dragging .md-track-fill {
-  -webkit-transition: none;
   transition: none;
 }
 md-slider:not([md-discrete]) {
@@ -5477,7 +5375,6 @@ md-slider[md-vertical][md-discrete] .md-sign:after {
   opacity: 0;
   -webkit-transform: translate3d(0, -8px, 0);
           transform: translate3d(0, -8px, 0);
-  -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
 md-slider[md-vertical][md-discrete] .md-sign .md-thumb-text {
@@ -5530,9 +5427,7 @@ md-slider-container > *:first-child:not(md-slider), md-slider-container > *:last
   min-width: 25px;
   max-width: 42px;
   height: 25px;
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  -webkit-transition-property: color, max-width;
   transition-property: color, max-width;
 }
 md-slider-container > *:first-child:not(md-slider) {
@@ -5729,7 +5624,6 @@ md-switch .md-thumb:before {
   top: 0;
   right: 0;
   bottom: 0;
-  -webkit-transition: all 0.5s;
   transition: all 0.5s;
   width: auto;
 }
@@ -5746,17 +5640,14 @@ md-switch .md-thumb .md-ripple-container {
 md-switch:not(.md-dragging) .md-bar,
 md-switch:not(.md-dragging) .md-thumb-container,
 md-switch:not(.md-dragging) .md-thumb {
-  -webkit-transition: all 0.08s linear;
   transition: all 0.08s linear;
-  -webkit-transition-property: background-color, -webkit-transform;
   transition-property: background-color, -webkit-transform;
   transition-property: transform, background-color;
   transition-property: transform, background-color, -webkit-transform;
 }
 md-switch:not(.md-dragging) .md-bar,
 md-switch:not(.md-dragging) .md-thumb {
-  -webkit-transition-delay: 0.05s;
-          transition-delay: 0.05s;
+  transition-delay: 0.05s;
 }
 
 @media screen and (-ms-high-contrast: active) {
@@ -5805,7 +5696,6 @@ md-switch:not(.md-dragging) .md-thumb {
   }
 }
 .md-subheader-wrapper:not(.md-sticky-no-effect) {
-  -webkit-transition: 0.2s ease-out margin;
   transition: 0.2s ease-out margin;
 }
 .md-subheader-wrapper:not(.md-sticky-no-effect) .md-subheader {
@@ -5938,7 +5828,6 @@ md-tabs-wrapper md-prev-button, md-tabs-wrapper md-next-button {
   cursor: pointer;
   font-size: 16px;
   background: transparent no-repeat center center;
-  -webkit-transition: all 0.5s cubic-bezier(0.35, 0, 0.25, 1);
   transition: all 0.5s cubic-bezier(0.35, 0, 0.25, 1);
 }
 md-tabs-wrapper md-prev-button:focus, md-tabs-wrapper md-next-button:focus {
@@ -5949,7 +5838,6 @@ md-tabs-wrapper md-prev-button.md-disabled, md-tabs-wrapper md-next-button.md-di
   cursor: default;
 }
 md-tabs-wrapper md-prev-button.ng-leave, md-tabs-wrapper md-next-button.ng-leave {
-  -webkit-transition: none;
   transition: none;
 }
 md-tabs-wrapper md-prev-button md-icon, md-tabs-wrapper md-next-button md-icon {
@@ -6035,7 +5923,6 @@ md-pagination-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.35, 0, 0.25, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.35, 0, 0.25, 1);
   transition: transform 0.5s cubic-bezier(0.35, 0, 0.25, 1);
   transition: transform 0.5s cubic-bezier(0.35, 0, 0.25, 1), -webkit-transform 0.5s cubic-bezier(0.35, 0, 0.25, 1);
@@ -6079,7 +5966,6 @@ md-tab-content {
   left: 0;
   right: 0;
   bottom: 0;
-  -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.35, 0, 0.25, 1);
   transition: -webkit-transform 0.5s cubic-bezier(0.35, 0, 0.25, 1);
   transition: transform 0.5s cubic-bezier(0.35, 0, 0.25, 1);
   transition: transform 0.5s cubic-bezier(0.35, 0, 0.25, 1), -webkit-transform 0.5s cubic-bezier(0.35, 0, 0.25, 1);
@@ -6092,7 +5978,6 @@ md-tab-content.md-no-scroll {
   overflow: hidden;
 }
 md-tab-content.ng-leave, md-tab-content.md-no-transition {
-  -webkit-transition: none;
   transition: none;
 }
 md-tab-content.md-left:not(.md-active) {
@@ -6107,10 +5992,8 @@ md-tab-content.md-left:not(.md-active) {
           transform: translateX(100%);
 }
 md-tab-content.md-left:not(.md-active) * {
-  -webkit-transition: visibility 0s linear;
   transition: visibility 0s linear;
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
+  transition-delay: 0.5s;
   visibility: hidden;
 }
 md-tab-content.md-right:not(.md-active) {
@@ -6125,10 +6008,8 @@ md-tab-content.md-right:not(.md-active) {
           transform: translateX(-100%);
 }
 md-tab-content.md-right:not(.md-active) * {
-  -webkit-transition: visibility 0s linear;
   transition: visibility 0s linear;
-  -webkit-transition-delay: 0.5s;
-          transition-delay: 0.5s;
+  transition-delay: 0.5s;
   visibility: hidden;
 }
 md-tab-content > div {
@@ -6150,11 +6031,9 @@ md-ink-bar {
   height: 2px;
 }
 md-ink-bar.md-left {
-  -webkit-transition: left 0.125s cubic-bezier(0.35, 0, 0.25, 1), right 0.25s cubic-bezier(0.35, 0, 0.25, 1);
   transition: left 0.125s cubic-bezier(0.35, 0, 0.25, 1), right 0.25s cubic-bezier(0.35, 0, 0.25, 1);
 }
 md-ink-bar.md-right {
-  -webkit-transition: left 0.25s cubic-bezier(0.35, 0, 0.25, 1), right 0.125s cubic-bezier(0.35, 0, 0.25, 1);
   transition: left 0.25s cubic-bezier(0.35, 0, 0.25, 1), right 0.125s cubic-bezier(0.35, 0, 0.25, 1);
 }
 
@@ -6169,7 +6048,6 @@ md-tab {
   text-align: center;
   line-height: 24px;
   padding: 12px 24px;
-  -webkit-transition: background-color 0.35s cubic-bezier(0.35, 0, 0.25, 1);
   transition: background-color 0.35s cubic-bezier(0.35, 0, 0.25, 1);
   cursor: pointer;
   white-space: nowrap;
@@ -6204,7 +6082,6 @@ md-tab {
   cursor: default;
 }
 .md-tab.ng-leave {
-  -webkit-transition: none;
   transition: none;
 }
 
@@ -6273,17 +6150,14 @@ md-toolbar + md-tabs {
           transform: scale(0);
 }
 .md-tooltip.md-show {
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   -webkit-transform: scale(1);
           transform: scale(1);
   opacity: 0.9;
 }
 .md-tooltip.md-hide {
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
-  -webkit-transition-duration: .1s;
-          transition-duration: .1s;
+  transition-duration: .1s;
   -webkit-transform: scale(0);
           transform: scale(0);
   opacity: 0;
@@ -6305,15 +6179,11 @@ md-toolbar {
   width: 100%;
 }
 md-toolbar._md-toolbar-transitions {
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-  -webkit-transition-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
-          transition-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
-  -webkit-transition-property: background-color, fill, color;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
   transition-property: background-color, fill, color;
 }
 md-toolbar.md-whiteframe-z1-add, md-toolbar.md-whiteframe-z1-remove {
-  -webkit-transition: box-shadow 0.5s linear;
   transition: box-shadow 0.5s linear;
 }
 md-toolbar md-toolbar-filler {
@@ -6325,7 +6195,6 @@ md-toolbar *:after {
   box-sizing: border-box;
 }
 md-toolbar.ng-animate {
-  -webkit-transition: none;
   transition: none;
 }
 md-toolbar.md-tall {
@@ -6403,15 +6272,11 @@ md-toolbar ~ md-content > md-list md-list-item:last-child md-divider {
   margin-bottom: 0;
 }
 .md-toolbar-tools .md-button, .md-toolbar-tools .md-button.md-icon-button md-icon {
-  -webkit-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-  -webkit-transition-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
-          transition-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
-  -webkit-transition-property: background-color, fill, color;
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.35, 0, 0.25, 1);
   transition-property: background-color, fill, color;
 }
 .md-toolbar-tools .md-button.ng-animate, .md-toolbar-tools .md-button.md-icon-button md-icon.ng-animate {
-  -webkit-transition: none;
   transition: none;
 }
 .md-toolbar-tools > .md-button:first-child {
@@ -6480,7 +6345,6 @@ md-toast {
   overflow: hidden;
   padding: 8px;
   opacity: 1;
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   /* Transition differently when swiping */
   /*
@@ -6506,7 +6370,6 @@ md-toast .md-toast-content {
   overflow: hidden;
   -webkit-transform: translate3d(0, 0, 0) rotateZ(0deg);
           transform: translate3d(0, 0, 0) rotateZ(0deg);
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   -webkit-box-pack: start;
       -ms-flex-pack: start;
@@ -6537,11 +6400,9 @@ md-toast.md-capsule .md-toast-content {
   border-radius: 24px;
 }
 md-toast.ng-leave-active .md-toast-content {
-  -webkit-transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
   transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
 }
 md-toast.md-swipeleft .md-toast-content, md-toast.md-swiperight .md-toast-content, md-toast.md-swipeup .md-toast-content, md-toast.md-swipedown .md-toast-content {
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 md-toast.ng-enter {
@@ -30115,7 +29976,7 @@ md-toast .md-button {
 }
 
 .cb-gray {
-  color: #a4b2bf;
+  color: #a3a5a7;
 }
 
 .cb-gray-l {
@@ -30143,7 +30004,7 @@ md-toast .md-button {
 }
 
 .cb-green {
-  color: #46d500;
+  color: #c6d7a4;
 }
 
 .cb-yellow {
@@ -30208,4 +30069,10 @@ md-toast .md-button {
 
 .fs-15 {
   font-size: 2rem;
+}
+
+.md-button._md-nav-button {
+  font-size: 0.9rem;
+  color: #a3a5a7;
+  text-transform: none;
 }

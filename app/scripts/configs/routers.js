@@ -9,9 +9,9 @@ angular.module('livingstones')
 
       $mdThemingProvider
         .theme('default')
-        .accentPalette('teal')
+        .accentPalette('light-green', {'default': '300'})
         .warnPalette('red')
-        .primaryPalette('cyan',{'default': '300'})
+        .primaryPalette('grey',{'default': '100'})
         .backgroundPalette('grey',{'default': '50'});
 
 //----------------------------------------------------------------------
